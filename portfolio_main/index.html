@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design cafe</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css"
+        integrity="sha512-ZKX+BvQihRJPA8CROKBhDNvoc2aDMOdAlcm7TUQY+35XYtrd3yh95QOOhsPDQY9QnKE0Wqag9y38OIgEvb88cA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+
+<body>
+    <div class="container">
+        <header id="header">
+            <div class="header_wrap">
+                <h1 class="header_logo">Aki Design</h1>
+                <nav class="header_nav">
+                    <ul class="header_ul">
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#concept">コンセプト</a></li>
+                        <li><a href="#contents">コンテンツ</a></li>
+                        <li><a href="#about">私について</a></li>
+                        <li><a href="#works">つくったもの</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section class="home" id="home">
+                <h2>かさなるチカラ</h2>
+            </section>
+            <div class="home_slider">
+                <div class="home_slider_item">
+                    <picture>
+                        <source srcset="images/img/shake_hands.jpg">
+                        <img src="images/img/shake_hands.jpg" alt="手を合わせる画像">
+                    </picture>
+                </div>
+                <div class="home_slider_item">
+                    <picture>
+                        <source srcset="images/img/hands_2.jpg">
+                        <img src="images/img/hands_2.jpg" alt="手を重ねる画像">
+                    </picture>
+                </div>
+                <div class="home_slider_item">
+                    <picture>
+                        <source srcset="images/img/hands_3.jpg">
+                        <img src="images/img/hands_3.jpg" alt="握手する画像">
+
+                    </picture>
+                </div>
+                <div class="circle_home"></div>
+                <div class="scrolldown"><span>Scroll</span></div>
+            </div>
+            <section class="concept" id="concept">
+                <div class="concept_background">
+                    <h2>おもい</h2>
+                    <p>人と人とのかさなりはすごいチカラ。<br>
+                        手を取り合うことで<br>
+                        ひとりでは描けなかった<br>
+                        想像以上の世界を描ことができる。<br>
+                        そして思ってもみなかった景色を見ることができる。<br>
+                        人生はかさなりで彩られる。<br>
+                        私はかさなるを大切にしています。<br>
+                    </p>
+                </div>
+            </section>
+            <section class="contents" id="contents">
+                <img src="images/img/コンテンツ仮-80.jpg" alt="">
+
+
+            </section>
+            <section class="about" id="about">
+                <div>
+                    <img class="about_background_color" src="images/img/wave_gr_1.png" alt="波模様green_1">
+                    <h2>私について</h2>
+                    <ul>
+                        <li>
+                            <img class="about_photo" src="images/img/about.png" alt="手をつなぐ画像">
+                        </li>
+                        <li>
+                            <p class="name_p">Aki</p>
+                            <p class="profile_p">
+                                大学でクラフトデザインを専攻し、のちにガラスアートの道へ。<br>
+                                育児休業中にWeb関連に興味を持ち、ライティングとSEOを学ぶ。
+                                ワードプレスのテーマを使ったサイトを作るうちに、余白などデザイン調整ができないもどかしさを覚え、このときにHTMLとCSSのコードの存在を知る。
+                                一方、ガラスアートを再開すると、
+                                「どうしても自分の手で自分のサイトを作りたい！」
+                                「しかも動きのあるサイトがいい！」
+                                と、アツい想いが高まりWebデザインとコーディングを習得。
+                                ガッツは誰にも負けない。
+                                疲れるとお菓子作りを始める性質がある。
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="about_skill_slider">
+                <h3 class="about_slider_sub">できること</h3>
+                <div class="slider_parts">
+                    <ul class="about_slider">
+                        <li class="coding">
+                            <div class="coding_img">
+                                <img class="coding_icon" src="images/img/coding.jpg" alt="コーディング">
+
+                                <img class="skill_img" src="images/img/skill.svg" alt="丸枠">
+                            </div>
+                            <div>
+                                <h4 class="coding_label">coding</h4>
+                                <p class="coding_skill">HTML / CSS / JavaScript / jQuery / GitHub</p>
+                            </div>
+                        </li>
+                        <li class="design">
+                            <div class="design_img">
+                                <img class="design_icon" src="images/img/design.jpg" alt="デザイン">
+                                <img class="skill_img" src="images/img/skill.svg" alt="丸枠">
+                            </div>
+                            <div>
+                                <h4 class="design_label">Design</h4>
+                                <p class="design_skill">Illustrator / Photoshop / Figma</p>
+                            </div>
+                        </li>
+                        <li class="writing">
+                            <div class="writing_img">
+
+                                <img class="writing_icon" src="images/img/writing.jpg" alt="ライティング">
+                                <img class="skill_img" src="images/img/skill.svg" alt="丸枠">
+                            </div>
+                            <div>
+                                <h4 class="writing_label">Writing</h4>
+                                <p class="writing_skill">SEO writing / Interview writing</p>
+                            </div>
+                        </li>
+
+                        <li class="others">
+                            <div class="others_img">
+                                <img class="others_icon" src="images/img/others.jpg" alt="その他">
+                                <img class="skill_img" src="images/img/skill.svg" alt="丸枠">
+                            </div>
+                            <div>
+                                <h4 class="others_label">Others</h4>
+                                <p class="others_skill">Illust / Photograph / GlassArt</p>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            </section>
+
+            <section class="works" id="works">
+                <h2>つくったもの</h2>
+                <div class="container_1"></div>
+                <ul class="web_design">
+
+                    <li><img class="web_design_image" id="works_Web_design" src="images/img/works_web.jpg"
+                            alt="ウェブデザイン">
+                    </li>
+                    <li class="more_1">more</li>
+                    <li class="web">Web Design</li>
+                </ul>
+
+                <div class="container_2"></div>
+                <ul class="glass_art">
+                    <li>
+                        <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
+                            alt="グラスアート">
+                    </li>
+                    <li class="more_2">more</li>
+                    <li class="glass">Glass Art</li>
+
+
+                </ul>
+            </section>
+            <section class="contact" id="contact">
+                <div class="circle"></div>
+                <h2>お問い合わせ</h2>
+                <div class="contact_drawing">
+                    <img src="images/img/問い合わせ仮.png" alt="親子">
+                </div>
+                <div class="contact_parts">
+                    <ul>
+                        <li class="contact_btn"><a href="#contactform"></a>お問い合わせはこちらから</li>
+                        <li class="mail_icon"><img src="images/img/mail_icon.svg" alt="メールアイコン"></li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="circle_footer"></div>
+            <div class="scrollup"><span>Top</span></div>
+            <div class="arrow_up_1"></div>
+            <div class="arrow_up_2"></div>
+            <img class="background_wave" src="images/img/wave_main.png" alt="背景波模様">
+            <div class="footer">
+
+                <a href="#header_a">
+
+                    <ul class="footer_a">
+                        <li><a href="#home">ホーム</a></li>
+                        <li><a href="#concept">おもい</a></li>
+                        <li><a href="#contents">コンテンツ</a></li>
+                        <li><a href="#about">私について</a></li>
+                        <li><a href="#works">つくったもの</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </a>
+                <ul class="sns_rnk">
+                    <li class="instagram_icon">
+                        <img src="images/img/Instagram_icon.svg" alt="Instagram">
+                    </li>
+                    <li class="x_icon">
+                        <img src="images/img/X_icon.png" alt="X">
+                    </li>
+                </ul>
+                <ul class="copyright">
+                    <p>©️ Aki design All Right Reserved</p>
+                </ul>
+            </div>
+
+        </footer>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $('.about_slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 5000
+            });
+        });
+        $(function () {
+            var items = $('.home_slider_item');
+            var index = 0;
+
+            function changeSlide() {
+                items.eq(index).removeClass('active');
+                index = (index + 1) % items.length;
+                items.eq(index).addClass('active');
+            }
+
+            // 初回実行
+            changeSlide();
+
+            // 定期的にスライドを切り替える
+            setInterval(changeSlide, 7000);
+        });
+
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+        integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>

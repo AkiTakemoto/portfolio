@@ -1,0 +1,205 @@
+@charset "UTF-8";
+main {
+  background-color: white;
+  max-width: 1366px;
+
+  margin-right: 5%;
+}
+
+.header_wrap {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_logo {
+  font-family: "Hubballi";
+  font-size: 20px;
+  font-weight: regular;
+  padding-top: 30px;
+  padding-left: 72px;
+  white-space: nowrap;
+}
+.header_ul {
+  font-size: 12px;
+  display: flex;
+  padding-top: 30px;
+  padding-right: 180px;
+}
+
+.header_nav li {
+  padding-left: 30px;
+  white-space: nowrap;
+  padding-right: 15px;
+}
+
+/*ヘッダーエリア*/
+.header_nav a {
+  position: relative;
+  display: inline-block;
+  transition: color 0.6s ease-out;
+}
+
+.header_nav {
+  max-width: 1000px;
+}
+
+.header_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(91, 87, 62, 70);
+  width: 100%;
+  height: 1px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s ease-out;
+  /*opacity: 0;
+      transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
+}
+
+.header_nav a:hover::after {
+  transform: scale(1, 1);
+  transform: right top;
+  /*opacity: 1;  下線がふわっと出るタイプ*/
+}
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.works_title {
+  font-size: 55px;
+  font-weight: normal;
+  padding-top: 186px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+.works_sbtitle {
+  font-size: 25px;
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 142px;
+  padding-top: 70px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  width: calc(50% - 20px);
+  margin: 0 auto;
+  margin: 10px;
+
+  padding: 10px;
+  padding-bottom: 88px;
+  box-sizing: border-box;
+}
+
+.item img {
+  width: 100%;
+  height: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.line_left {
+  border-left: 4px solid #5b573e;
+  padding-left: 10px;
+}
+
+h4 {
+  font-size: 22px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.p_1 {
+  padding-top: 10px;
+  font-size: 14px;
+}
+
+.p_2 {
+  padding-bottom: 120px;
+}
+
+.more {
+  text-align: center;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+.instagram_rnk {
+  height: 65px;
+  width: auto;
+  padding-top: 23px;
+  padding-bottom: 40px;
+  margin: auto;
+  display: block;
+}
+
+/*フッターエリア*/
+.background_wave {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  height: 440px;
+}
+.footer {
+  max-width: 1366px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+
+  top: 220px;
+  left: 0px;
+}
+
+.footer_a {
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.footer_a li {
+  margin: 0 10px;
+}
+
+.sns_rnk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram_icon,
+.x_icon {
+  width: 24px;
+  margin: 41px 10px 42px;
+  display: flex;
+  align-items: center;
+}
+
+.sns_rnk img {
+  width: 100%;
+  height: auto;
+}
+.copyright {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 30px;
+}

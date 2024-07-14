@@ -1,0 +1,216 @@
+@charset "UTF-8";
+
+.container {
+  max-width: 1366px;
+  margin: 0 auto;
+}
+
+main {
+  background-color: white;
+  max-width: 1366px;
+
+  margin-right: 5%;
+}
+
+.header_wrap {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header_logo {
+  font-family: "Hubballi";
+  font-size: 20px;
+  font-weight: regular;
+  padding-top: 30px;
+  padding-left: 72px;
+  white-space: nowrap;
+}
+.header_ul {
+  font-size: 12px;
+  display: flex;
+  padding-top: 30px;
+  padding-right: 180px;
+}
+
+.header_nav li {
+  padding-left: 30px;
+  white-space: nowrap;
+  padding-right: 15px;
+}
+
+/*ヘッダーエリア*/
+.header_nav a {
+  position: relative;
+  display: inline-block;
+  transition: color 0.6s ease-out;
+}
+
+.header_nav {
+  max-width: 1000px;
+}
+
+.header_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(91, 87, 62, 70);
+  width: 100%;
+  height: 1px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s ease-out;
+  /*opacity: 0;
+      transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
+}
+
+.header_nav a:hover::after {
+  transform: scale(1, 1);
+  transform: right top;
+  /*opacity: 1;  下線がふわっと出るタイプ*/
+}
+
+main {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.contact_title {
+  font-size: 55px;
+  font-weight: normal;
+  padding-top: 186px;
+  padding-bottom: 70px;
+  text-align: center;
+}
+
+.contact_sbtitle {
+  font-size: 19px;
+  font-weight: lighter;
+  text-align: center;
+  padding-bottom: 142px;
+}
+
+.c-form {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.c-form__item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  height: 55px;
+  margin-bottom: 20px;
+}
+
+.c-form__input {
+  padding: 10px;
+  width: 100%;
+  font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック", "YuMGothic",
+    "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
+  font-size: 16px;
+  font-weight: lighter;
+  opacity: 0.8;
+  outline: none;
+  border: 1px solid #efeeec;
+  border-radius: 3px;
+  align-items: center;
+}
+
+textarea.c-form__input {
+  height: 160px;
+}
+.c-form__submit {
+  text-align: center;
+  padding-top: 150px;
+  padding-bottom: 30px;
+}
+.c-form__submit button {
+  font-size: 16px;
+  font-weight: lighter;
+  color: #5b573e;
+  background-color: #efe7b4;
+  border-radius: 3px;
+  padding: 5px 32px;
+  transition: 0.8s;
+  cursor: pointer;
+  border: none;
+}
+.c-form__submit button:hover {
+  color: #a0a08e;
+  background-color: #a0a08e(90%);
+}
+
+@media (min-width: 640px) {
+  .c-form__item {
+    flex-wrap: nowrap;
+  }
+  .c-form__label {
+    width: 40%;
+  }
+  .c-form__input {
+    width: 55%;
+  }
+}
+
+/*フッターエリア*/
+.background_wave {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+  position: absolute;
+  height: 440px;
+}
+.footer {
+  max-width: 1366px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+
+  top: 220px;
+  left: 0px;
+}
+
+.footer_a {
+  display: flex;
+  font-size: 13px;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 20px;
+  white-space: nowrap;
+}
+
+.footer_a li {
+  margin: 0 10px;
+}
+
+.sns_rnk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.instagram_icon,
+.x_icon {
+  width: 24px;
+  margin: 41px 10px 42px;
+  display: flex;
+  align-items: center;
+}
+
+.sns_rnk img {
+  width: 100%;
+  height: auto;
+}
+.copyright {
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 30px;
+}

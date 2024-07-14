@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <header id="header">
+        <div class="header_wrap">
+            <h1 class="header_logo">Aki Design</h1>
+            <nav class="header_nav">
+                <ul class="header_ul">
+                    <li><a href="#home">ホーム</a></li>
+                    <li><a href="#concept">コンセプト</a></li>
+                    <li><a href="#contents">コンテンツ</a></li>
+                    <li><a href="#about">私について</a></li>
+                    <li><a href="#works">つくったもの</a></li>
+                    <li><a href="#contact">お問い合わせ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <h2 class="contact_title">お問い合わせ</h2>
+            <h3 class="contact_sbtitle">以下の項目に必要事項をお書きください。</h3>
+
+            <form class="c-form">
+                <div class="c-form__item">
+                    <input class="c-form__input" id="field-name" placeholder="お名前" type="text" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <input class="c-form__input" id="field-kana" placeholder="ふりがな" type="kana" required="required" />
+                </div>
+                <div class="c-form__item">
+                    <input class="c-form__input" id="field-mail" placeholder="メールアドレス/sample@gmail.com" type="email"
+                        required="required" />
+                </div>
+                <div class="c-form__item">
+                    <textarea class="c-form__input" id="field-message" placeholder="お問い合わせ内容"></textarea>
+                </div>
+                <div class="c-form__submit">
+                    <button type="submit">送信</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+</body>
+<footer>
+    <img class="background_wave" src="img/wave_main.png" alt="背景波模様">
+    <div class="footer">
+
+        <a href="#header_a">
+
+            <ul class="footer_a">
+                <li><a href="#home">ホーム</a></li>
+                <li><a href="#concept">おもい</a></li>
+                <li><a href="#contents">コンテンツ</a></li>
+                <li><a href="#about">私について</a></li>
+                <li><a href="#works">つくったもの</a></li>
+                <li><a href="#contact">お問い合わせ</a></li>
+            </ul>
+        </a>
+        <ul class="sns_rnk">
+            <li class="instagram_icon">
+                <img src="img/Instagram_icon.svg" alt="Instagram">
+            </li>
+            <li class="x_icon">
+                <img src="img/X_icon.svg" alt="X">
+            </li>
+        </ul>
+        <ul class="copyright">
+            <p>©️ Aki design All Right Reserved</p>
+        </ul>
+    </div>
+</footer>
+
+</html>
