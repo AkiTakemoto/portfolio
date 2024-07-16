@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-.container {
-  max-width: 1366px;
-  margin: 0 auto;
-}
-
 main > section {
   max-width: 100%;
   margin: 0 auto;
@@ -237,6 +232,7 @@ h2 {
 }
 .about_contents {
   max-width: 1366px;
+  margin: 0 auto;
 }
 /* .about_background_color_2 {
   position: absolute;
@@ -513,6 +509,10 @@ h2 {
 .contact {
   max-width: 1366px;
 }
+.contact_contents {
+  display: flex;
+  justify-content: space-between;
+}
 
 .circle {
   display: inline-block;
@@ -522,20 +522,20 @@ h2 {
   border-radius: 60% / 70% 70% 0 0;
   background: white;
   position: relative;
-  top: 1290px;
+  /* top: 1290px; */
   left: 0px;
   box-sizing: border-box;
 }
 .contact h2 {
-  padding-top: 1300px;
+  /* padding-top: 1300px; */
   padding-left: 10%;
   white-space: nowrap;
 }
 
 .contact_drawing {
-  position: relative;
-  top: 1150px;
-  left: 53%;
+  /* position: relative;
+  /* top: 1150px; */
+  /* left: 53%;  */
   display: inline-block;
 }
 
@@ -546,9 +546,9 @@ h2 {
 
 .contact ul {
   display: flex;
-  position: relative;
+  /* position: relative;
   top: 650px;
-  left: 0%;
+  left: 0%; */
 }
 .contact_btn {
   font-size: 24px;
