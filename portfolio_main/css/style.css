@@ -44,7 +44,7 @@ h2 {
   font-size: 40px;
   padding-left: 10%;
   white-space: nowrap;
-  position: absolute;
+  /* position: absolute; */
 }
 .home h2 {
   padding-top: 200px;
@@ -106,7 +106,7 @@ h2 {
   position: absolute;
   top: 100px;
   left: 33%;
-  width: 100%;
+  width: 800%;
   height: 100%;
   opacity: 0;
   padding-bottom: 20px;
@@ -209,8 +209,8 @@ h2 {
 
 .concept p {
   padding-left: 10%;
-  padding-top: 200px;
-  padding-bottom: 220px;
+  /* padding-top: 200px; */
+  /* padding-bottom: 220px; */
   font-size: 16px;
   line-height: 3.75;
   font-feature-settings: "palt";
@@ -230,14 +230,19 @@ h2 {
 /*私についてのエリア*/
 
 .about {
+  width: 100%;
+  background-image: url("../images/img/wave_gr_1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.about_contents {
   max-width: 1366px;
 }
-
-.about_background_color_2 {
+/* .about_background_color_2 {
   position: absolute;
   margin: 0 auto;
   width: 100%;
-}
+} */
 
 .about ul {
   max-width: 1000px;
