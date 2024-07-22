@@ -1,15 +1,10 @@
 @charset "utf-8";
 
-.container {
-  max-width: 1366px;
-  margin: 0 auto;
-}
-
 main > section {
   max-width: 100%;
   margin: 0 auto;
 }
-
+/*ヘッダーエリア*/
 .header_wrap {
   max-width: 1366px;
   width: 100%;
@@ -18,40 +13,55 @@ main > section {
   align-items: center;
   justify-content: space-between;
 }
-
 .header_logo {
   font-family: "Hubballi";
   font-size: 20px;
-  font-weight: regular;
+  font-weight: normal;
   padding-top: 30px;
   padding-left: 72px;
   white-space: nowrap;
 }
-.header_ul {
+.header_pc_ul {
+  display: block;
   font-size: 12px;
   display: flex;
   padding-top: 30px;
-  padding-right: 180px;
+}
+.header_sp_ul {
+  display: none;
 }
 
-.header_nav li {
+.header_pc_nav li {
   padding-left: 30px;
   white-space: nowrap;
   padding-right: 15px;
 }
 
-/*ヘッダーエリア*/
-.header_nav a {
+.header_pc_nav a {
   position: relative;
   display: inline-block;
   transition: color 0.6s ease-out;
 }
-
-.header_nav {
+.header_pc_nav {
   max-width: 1000px;
+  margin: 0 auto;
 }
 
-.header_nav a::after {
+.header_pc_ul li li {
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.header_pc_ul li li a {
+  border-top: 1px solid #eee;
+}
+.gnav li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+}
+
+.header_pc_nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -63,10 +73,9 @@ main > section {
   transform-origin: left top;
   transition: transform 0.5s ease-out;
   /*opacity: 0;
-    transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
+  transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
 }
-
-.header_nav a:hover::after {
+.header_pc_nav a:hover::after {
   transform: scale(1, 1);
   transform: right top;
   /*opacity: 1;  下線がふわっと出るタイプ*/
@@ -94,7 +103,7 @@ main {
   padding-top: 70px;
 }
 
-.container {
+.container_item {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -190,6 +199,29 @@ h4 {
   font-size: 14px;
 }
 
+#grayDisplay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100% !important;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+#grayDisplay img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 90%;
+  max-height: 90%;
+  height: 90%;
+  object-fit: contain;
+}
 /*フッターエリア*/
 .background_wave {
   max-width: 1366px;
@@ -199,16 +231,17 @@ h4 {
   position: absolute;
   height: 440px;
 }
+.footer_era {
+  padding-top: 300px;
+  background-image: url("../imgs/wave_main.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .footer {
   max-width: 1366px;
   margin: 0 auto;
   text-align: center;
-  position: relative;
-
-  top: 220px;
-  left: 0px;
 }
-
 .footer_a {
   display: flex;
   font-size: 13px;
@@ -217,17 +250,14 @@ h4 {
   padding: 20px;
   white-space: nowrap;
 }
-
 .footer_a li {
   margin: 0 10px;
 }
-
 .sns_rnk {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .instagram_icon,
 .x_icon {
   width: 24px;
@@ -235,15 +265,356 @@ h4 {
   display: flex;
   align-items: center;
 }
-
 .sns_rnk img {
   width: 100%;
   height: auto;
 }
 .copyright {
+  font-size: 11px;
+  font-weight: lighter;
   max-width: 1366px;
   width: 100%;
   margin: 0 auto;
   text-align: center;
   padding-bottom: 30px;
+}
+
+@media screen and (max-width: 1100px) {
+  .header_pc_nav {
+    display: none;
+  }
+
+  /*ハンバーガーメニューエリア
+  .sp_btn {
+    display: block;
+    height: 23px;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .home_sp_circle {
+    z-index: 5;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .sp_btn span {
+    display: block;
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+    top: 10px;
+    transition: 0.3s;
+  }
+  .sp_btn span::before,
+  .sp_btn span::after {
+    content: "";
+    display: block;
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    position: absolute;
+    transition: 0.3s;
+  }
+  .sp_btn span::before {
+    bottom: 10px;
+  }
+  .sp_btn span::after {
+    top: 10px;
+  }
+  */
+  /*ばつ印
+  .sp_btn.open span {
+    background: transparent;
+  }
+  .sp_btn.open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  .header_sp_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    background: #8b8c8c;
+    z-index: 4;
+  }
+  .header_sp_nav.active {
+    display: flex; 
+  }
+  .header_sp_nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .header_sp_nav li {
+    padding: 20px;
+    color: #fff;
+    font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
+      "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
+    font-weight: lighter;
+    font-size: 14px;
+    position: relative;
+  }
+  .header_sp_nav a {
+    position: relative; 
+  }
+  .header_sp_nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 1px;
+    transform: scale(0, 1);
+    transform-origin: left bottom;
+    transition: transform 0.5s ease-out;
+  }
+  .header_sp_nav a:hover::after {
+    transform: scale(1, 1);
+    transform: right top;
+  }
+  picture {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+*/
+
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container_item {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /*全体*/
+  picture {
+    max-width: 767px;
+    width: 100%;
+  }
+  main > section,
+  .header {
+    max-width: 300px;
+    width: 100px;
+  }
+  h2 {
+    font-size: 20px;
+    padding-top: 137px;
+  }
+
+  /*----------------------*/
+  /*ヘッダーとホームエリア*/
+  .header_pc_ul {
+    display: none;
+  }
+  .header_wrap {
+    max-width: 767px;
+    width: 100%;
+    padding-left: 22px;
+    margin: 0 auto;
+  }
+  .header_logo {
+    font-family: "Hubballi";
+    font-size: 19px;
+    font-weight: normal;
+    padding-top: 30px;
+    padding-left: 22px;
+    white-space: nowrap;
+  }
+
+  main {
+    max-width: 767px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .works_title {
+    font-size: 20px;
+    font-weight: normal;
+    padding-top: 186px;
+    padding-left: 0%;
+    padding-bottom: 38px;
+    text-align: center;
+  }
+
+  .works_sbtitle {
+    font-size: 17px;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 100px;
+    padding-top: 0px;
+  }
+
+  .container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .container_item {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .item {
+    width: calc(50% - 20px);
+    margin: 0 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 150px;
+    box-sizing: border-box;
+  }
+
+  .SP_mock_img {
+    align-items: center;
+  }
+
+  .line_left {
+    border-left: 4px solid #5b573e;
+    padding-left: 10px;
+  }
+
+  h4 {
+    font-size: 16px;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+
+  .square_yellow {
+    position: relative;
+    width: 92px;
+    height: 24px;
+    background-color: #efe7b4;
+    border-radius: 3px;
+    padding-right: 5px;
+  }
+
+  .square_blue {
+    position: relative;
+    width: 92px;
+    height: 24px;
+    background-color: #d8e3e5;
+    border-radius: 3px;
+    padding-right: 5px;
+  }
+
+  .square_green {
+    position: relative;
+    width: 106px;
+    height: 24px;
+    background-color: #dce8d9;
+    border-radius: 3px;
+    padding-right: 5px;
+  }
+
+  .banner_tag {
+    font-size: 12px;
+    padding-top: 7px;
+    padding-bottom: 25px;
+    margin-bottom: 5px;
+    padding-left: 15px;
+    position: absolute;
+  }
+
+  .site_tag {
+    font-size: 12px;
+    padding-top: 7px;
+    padding-bottom: 25px;
+    padding-left: 15px;
+    position: absolute;
+  }
+
+  .LP_tag {
+    font-size: 12px;
+    padding-top: 7px;
+    padding-bottom: 25px;
+    padding-left: 28px;
+    position: absolute;
+  }
+
+  .coding_tag {
+    font-size: 12px;
+    padding-top: 7px;
+    padding-bottom: 25px;
+    padding-left: 14px;
+    position: absolute;
+  }
+
+  .banner_p_1 {
+    padding-top: 14px;
+    font-size: 13px;
+  }
+
+  .banner_p_2 {
+    padding-top: 13px;
+    font-size: 13px;
+  }
+
+  /*----------------------*/
+  /*----------------------*/
+  /*フッターエリア*/
+  .footer_era {
+    background-image: url("../imgs/wave_sp_bl@2x.png");
+    padding-top: 40px;
+    background-size: cover;
+  }
+  .footer {
+    max-width: 765px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer_a {
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    white-space: nowrap;
+    padding-top: 20px;
+  }
+  .footer_a li {
+    margin: 25px 25px 25px;
+  }
+  .sns_rnk {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .instagram_icon,
+  .x_icon {
+    width: 29px;
+    margin: 20px 0px 40px;
+    display: flex;
+    align-items: center;
+  }
+  .sns_rnk img {
+    width: 100%;
+    height: auto;
+  }
+  .copyright {
+    font-size: 8px;
+    font-weight: lighter;
+  }
 }

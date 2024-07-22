@@ -1,10 +1,91 @@
 @charset "utf-8";
 
+/*----- スクロールパーツ -----*/
+main {
+  position: relative;
+  overflow-x: hidden;
+}
+footer {
+  margin-top: -150px;
+}
+.scroll_circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 1px solid #b2b2b2;
+  position: relative;
+  z-index: 2;
+}
+
+.scrolldown span {
+  position: absolute;
+  right: 65px;
+  bottom: 110px;
+  color: #b2b2b2;
+  font-size: 15px;
+  letter-spacing: 0.05em;
+  -ms-writing-mode: tb-rl;
+  -webkit-writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.scrolldown:before {
+  content: "";
+  position: absolute;
+  bottom: 70px;
+  right: 66px;
+  width: 1px;
+  height: 30px;
+  background: #b2b2b2;
+  transform: skewX(31deg);
+}
+
+.scrolldown:after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 57px;
+  width: 1px;
+  height: 160px;
+  background: #b2b2b2;
+}
+
+/* トップ */
+.top.scroll_circle {
+  top: 230px;
+  left: -130px;
+}
+/* フッター */
+.bottom.scroll_circle {
+  top: -250px;
+  right: -130px;
+  margin-left: auto;
+}
+.bottom .scrolldown span {
+  right: auto;
+  left: 62px;
+  bottom: 40px;
+  transform: rotate(0deg);
+}
+.bottom .scrolldown:before {
+  right: auto;
+  left: 69.5px;
+  bottom: 146px;
+}
+.bottom .scrolldown:after {
+  right: auto;
+  left: 60px;
+  top: auto;
+  bottom: 17px;
+}
+/*----------------------*/
+
 main > section {
   max-width: 100%;
   margin: 0 auto;
 }
-
+/*ヘッダーエリア*/
 .header_wrap {
   max-width: 1366px;
   width: 100%;
@@ -13,65 +94,39 @@ main > section {
   align-items: center;
   justify-content: space-between;
 }
-
 .header_logo {
   font-family: "Hubballi";
   font-size: 20px;
-  font-weight: regular;
+  font-weight: normal;
   padding-top: 30px;
   padding-left: 72px;
   white-space: nowrap;
 }
-.header_ul {
+.header_pc_ul {
+  display: block;
   font-size: 12px;
   display: flex;
   padding-top: 30px;
-  padding-right: 180px;
 }
-
-.header_nav li {
+.header_sp_ul {
+  display: none;
+}
+.header_pc_nav li {
   padding-left: 30px;
   white-space: nowrap;
   padding-right: 15px;
 }
 
-h2 {
-  font-size: 40px;
-  padding-left: 10%;
-  white-space: nowrap;
-  /* position: absolute; */
-}
-.home h2 {
-  padding-top: 200px;
-  padding-left: 10%;
-  white-space: nowrap;
-}
-.concept h2 {
-  padding-top: 87px;
-  padding-left: 10%;
-  white-space: nowrap;
-}
-.about h2 {
-  padding-top: 87px;
-  white-space: nowrap;
-  padding-bottom: 160px;
-  position: relative;
-  top: 100px;
-  left: 0%;
-}
-
-/*ヘッダーエリア*/
-.header_nav a {
+.header_pc_nav a {
   position: relative;
   display: inline-block;
   transition: color 0.6s ease-out;
 }
-
-.header_nav {
+.header_pc_nav {
   max-width: 1000px;
+  margin: 0 auto;
 }
-
-.header_nav a::after {
+.header_pc_nav a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -85,8 +140,7 @@ h2 {
   /*opacity: 0;
   transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
 }
-
-.header_nav a:hover::after {
+.header_pc_nav a:hover::after {
   transform: scale(1, 1);
   transform: right top;
   /*opacity: 1;  下線がふわっと出るタイプ*/
@@ -94,30 +148,45 @@ h2 {
 
 /*ホームエリア*/
 
+h2 {
+  font-size: 40px;
+  padding-left: 10%;
+  white-space: nowrap;
+}
+.home {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.home_parts {
+  display: flex;
+  flex-direction: row; /* デフォルトは横並び */
+  flex-wrap: nowrap;
+  padding-bottom: 70px;
+  position: relative; /* スライダーアイテムの配置を相対的にするため */
+}
+.home h2 {
+  padding-top: 190px;
+  white-space: nowrap;
+}
 .home_slider_item {
-  width: 100%;
   flex-shrink: 0;
   position: absolute;
-  top: 100px;
-  left: 33%;
-  width: 800%;
-  height: 100%;
+  top: 96px;
+  left: 30%;
+  height: auto;
   opacity: 0;
   padding-bottom: 20px;
   display: inline-block;
 }
 
-.home_slider {
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: hidden;
-  padding-bottom: 300px;
+.home_slider_item.active {
+  opacity: 1; /* アクティブなスライドを表示 */
+  animation: fadeIn 8s ease-in-out forwards;
 }
 
-.home_slider_item.active {
-  opacity: 1;
-  animation: fadeIn 8s ease-in-out forwards;
+.home_slider_item img {
+  max-width: 170%; /* 親要素の幅に合わせる */
+  height: auto; /* アスペクト比を維持 */
 }
 
 @keyframes fadeIn {
@@ -130,67 +199,9 @@ h2 {
   }
 }
 
-.circle_home {
-  display: inline-block;
-  width: 250px;
-  height: 250px;
-  border-radius: 100% / 100%;
-  border: solid 1px;
-  color: #b2b2b2;
-  position: relative;
-  top: 555px;
-  left: -130px;
-  transform: rotate(90deg);
-}
-
-.scrolldown {
-  position: absolute;
-  top: 10%;
-  left: 4%;
-}
-
-.scrolldown span {
-  position: absolute;
-  left: -25px;
-  top: 546px;
-  color: #b2b2b2;
-  font-size: 15px;
-  letter-spacing: 0.05em;
-  /*縦書き設定*/
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
-}
-
-/* 矢印の描写 */
-.scrolldown:before {
-  content: "";
-  /*描画位置*/
-  position: absolute;
-  top: 610px;
-  right: 4px;
-  /*矢印の形状*/
-  width: 1px;
-  height: 25px;
-  background: #b2b2b2;
-  transform: skewX(31deg);
-}
-
-.scrolldown:after {
-  content: "";
-  position: absolute;
-  top: 500px;
-  right: 0;
-  /*矢印の形状*/
-  width: 1px;
-  height: 160px;
-  background: #b2b2b2;
-}
-
 /*おもいエリア*/
 .concept {
-  max-width: 1366px;
+  padding-top: 200px;
 }
 
 .concept_background {
@@ -201,14 +212,23 @@ h2 {
   height: 800px;
 }
 
+.concept_text {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.concept h2 {
+  padding-top: 87px;
+  white-space: nowrap;
+}
+
 .concept p {
-  padding-left: 10%;
-  /* padding-top: 200px; */
-  /* padding-bottom: 220px; */
   font-size: 16px;
   line-height: 3.75;
   font-feature-settings: "palt";
+  padding-top: 96px;
 }
+
 /*コンテンツエリア*/
 
 .contents {
@@ -229,16 +249,20 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .about_contents {
   max-width: 1000px;
   margin: 0 auto;
 }
-/* .about_background_color_2 {
-  position: absolute;
-  margin: 0 auto;
-  width: 100%;
-} */
-
+.about h2 {
+  max-width: 1000px;
+  padding-top: 87px;
+  white-space: nowrap;
+  padding-bottom: 160px;
+  position: relative;
+  top: 100px;
+  left: 0%;
+}
 .about ul {
   max-width: 1000px;
   width: 100%;
@@ -421,95 +445,80 @@ h2 {
 }
 
 /*つくったものエリア*/
+.container_sp_1,
+.container_sp_2 {
+  display: none;
+}
+.container_pc_1,
+.container_pc_2 {
+  display: block;
+}
 .works {
   width: 100%;
-  height: 1417px;
   background-color: #efe7b4;
+  padding-top: 100px;
+  padding-bottom: 300px;
 }
-
+.works_title {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 .works h2 {
-  padding-top: 87px;
-  padding-left: 10%;
   padding-bottom: 66px;
+  font-size: 40px;
   white-space: nowrap;
 }
-
-.works ul {
+.container_pc_1 {
   display: flex;
-  padding-bottom: 100px;
+  gap: 25px;
+  margin-bottom: 100px;
 }
-
-.container_1 {
+.container_pc_2 {
+  display: flex;
+  gap: 25px;
+  flex-direction: row-reverse;
+}
+.web_design,
+.glass_art {
+  display: flex;
   background-color: white;
   height: 400px;
-  max-width: 1000px;
-  width: 100%;
-  position: absolute;
+  width: 73%;
+  align-items: flex-end;
+  position: relative; /* moreの基準とする */
 }
-.container_2 {
-  background-color: white;
-  height: 400px;
-  max-width: 1000px;
-  width: 100%;
-  right: 0%;
-  position: absolute;
-}
-
 .web_design_image {
-  padding-top: 53px;
-  padding-left: 51%;
-
-  height: 347px;
-
-  position: relative;
+  width: 494px;
+  margin: 0 auto;
 }
-
 .glass_art_image {
-  padding-left: 55%;
-  padding-top: 8px;
-  width: 49%;
-  position: relative;
+  width: 557px;
+  margin: 0 auto;
 }
-
 .more_1 {
-  padding-top: 310px;
   font-size: 18px;
-  position: absolute;
-  padding-left: 58%;
-  padding-top: 365px;
+  position: absolute; /* 白背景内で右下に配置 */
+  right: 10px;
+  bottom: 10px;
 }
-
 .more_2 {
-  padding-top: 320px;
   font-size: 18px;
-  position: absolute;
-  padding-left: 80%;
-  padding-top: 365px;
+  position: absolute; /* 白背景内で右下に配置 */
+  right: 9%;
+  bottom: 10px;
 }
-
-.web {
-  font-size: 27px;
-  font-weight: normal;
-  white-space: nowrap;
-  padding-top: 5px;
-  padding-left: 75%;
-  position: absolute;
-}
-
+.web,
 .glass {
   font-size: 27px;
   font-weight: normal;
   white-space: nowrap;
-  padding-top: 3px;
-  padding-left: 17%;
-  position: absolute;
 }
+
 /*お問合せエリア*/
 .contact {
-  /* max-width: 1366px; */
   position: relative;
   overflow: hidden;
-  margin-top: -100px;
+  margin-top: -120px;
 }
 .contact_contents {
   display: flex;
@@ -517,7 +526,6 @@ h2 {
   max-width: 1000px;
   margin: 0 auto;
 }
-
 .circle {
   min-height: 400px;
   border-top-right-radius: 1000px 200px;
@@ -525,127 +533,45 @@ h2 {
   margin-left: -100px;
   margin-right: -100px;
   background: #fff;
-  padding: 100px;
 }
-
 .contact h2 {
-  /* padding-top: 1300px; */
-  /* padding-left: 10%; */
   white-space: nowrap;
+  padding-top: 100px;
 }
-
 .contact_drawing {
-  /* position: relative;
-  /* top: 1150px; */
-  /* left: 53%;  */
   display: inline-block;
+  padding-top: 100px;
 }
-
 .contact_parts {
+  padding-top: 100px;
   width: 350px;
-  /* padding-left: 10%; */
 }
-
 .contact ul {
   display: flex;
-  /* position: relative;
-  top: 650px;
-  left: 0%; */
 }
 .contact_btn {
   font-size: 24px;
   padding-top: 73px;
 }
-
 .mail_icon {
   width: 40px;
   padding-top: 73px;
-  padding-bottom: 100px;
+  padding-bottom: 50px;
   padding-left: 3%;
-  width: 4%;
 }
 
 /*フッターエリア*/
-
 .footer_era {
-  max-width: 1366px;
   padding-top: 300px;
   background-image: url("../images/img/wave_main.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-.circle_footer {
-  display: inline-block;
-  width: 140px;
-  height: 140px;
-  border-radius: 100% / 100%;
-  border: solid 1px;
-  color: #b2b2b2;
-  position: relative;
-  top: 244px;
-  left: 92%;
-  transform: rotate(90deg);
-}
-
-.scrollup span {
-  position: relative;
-  left: 97%;
-  top: 200px;
-  color: #b2b2b2;
-  font-size: 13px;
-  letter-spacing: 0.05em;
-  /*縦書き設定*/
-  -ms-writing-mode: tb-rl;
-  -webkit-writing-mode: vertical-rl;
-  writing-mode: vertical-rl;
-}
-
-.arrow_up_1 {
-  width: 1px;
-  height: 19px;
-  position: relative;
-  top: 128px;
-  left: 96.6%;
-  background: #b2b2b2;
-  transform: skewX(31deg);
-}
-
-.arrow_up_2 {
-  width: 1px;
-  height: 80px;
-  position: relative;
-  top: 110px;
-  left: 96%;
-  background: #b2b2b2;
-}
-
-.background_wave {
-  max-width: 1366px;
-  width: 100%;
-  margin: 0 auto;
-  display: block;
-  position: absolute;
-  height: 440px;
-}
-
-/* .about {
-  width: 100%;
-  background-image: url("../images/img/wave_gr_1.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.about_contents {
-  max-width: 1000px;
-  margin: 0 auto;
-} */
-
 .footer {
   max-width: 1366px;
   margin: 0 auto;
   text-align: center;
 }
-
 .footer_a {
   display: flex;
   font-size: 13px;
@@ -654,17 +580,14 @@ h2 {
   padding: 20px;
   white-space: nowrap;
 }
-
 .footer_a li {
   margin: 0 10px;
 }
-
 .sns_rnk {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .instagram_icon,
 .x_icon {
   width: 24px;
@@ -672,12 +595,13 @@ h2 {
   display: flex;
   align-items: center;
 }
-
 .sns_rnk img {
   width: 100%;
   height: auto;
 }
 .copyright {
+  font-size: 11px;
+  font-weight: lighter;
   max-width: 1366px;
   width: 100%;
   margin: 0 auto;
@@ -685,5 +609,646 @@ h2 {
   padding-bottom: 30px;
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 910px) {
+  .header_pc_nav {
+    display: none;
+  }
+
+  /*ハンバーガーメニューエリア
+  .sp_btn {
+    display: block;
+    height: 23px;
+    cursor: pointer;
+    z-index: 5;
+  }
+  .home_sp_circle {
+    z-index: 5;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+  }
+  .sp_btn span {
+    display: block;
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+    top: 10px;
+    transition: 0.3s;
+  }
+  .sp_btn span::before,
+  .sp_btn span::after {
+    content: "";
+    display: block;
+    width: 33px;
+    height: 3px;
+    border-radius: 2px;
+    background: #fff;
+    position: absolute;
+    transition: 0.3s;
+  }
+  .sp_btn span::before {
+    bottom: 10px;
+  }
+  .sp_btn span::after {
+    top: 10px;
+  }
+  */
+  /*ばつ印
+  .sp_btn.open span {
+    background: transparent;
+  }
+  .sp_btn.open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+  .sp_btn.open span::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+  .header_sp_nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    background: #8b8c8c;
+    z-index: 4;
+  }
+  .header_sp_nav.active {
+    display: flex; 
+  }
+  .header_sp_nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  .header_sp_nav li {
+    padding: 20px;
+    color: #fff;
+    font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
+      "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
+    font-weight: lighter;
+    font-size: 14px;
+    position: relative;
+  }
+  .header_sp_nav a {
+    position: relative; 
+  }
+  .header_sp_nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: #fff;
+    width: 100%;
+    height: 1px;
+    transform: scale(0, 1);
+    transform-origin: left bottom;
+    transition: transform 0.5s ease-out;
+  }
+  .header_sp_nav a:hover::after {
+    transform: scale(1, 1);
+    transform: right top;
+  }
+  picture {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+*/
+
+  @media screen and (max-width: 767px) {
+    /*全体*/
+    picture {
+      max-width: 767px;
+      width: 100%;
+    }
+    main > section {
+      max-width: 375px;
+    }
+
+    /*----------------------*/
+    /*ヘッダーとホームエリア*/
+    .header_pc_ul {
+      display: none;
+    }
+    .header_wrap {
+      max-width: 767px;
+      width: 100%;
+      padding-left: 22px;
+      margin: 0 auto;
+    }
+    .header_logo {
+      font-family: "Hubballi";
+      font-size: 19px;
+      font-weight: normal;
+      padding-top: 30px;
+      padding-left: 22px;
+      white-space: nowrap;
+    }
+    .home h2 {
+      max-width: 767px;
+      width: 100%;
+      padding-left: 22px;
+
+      font-size: 20px;
+      padding-top: 137px;
+    }
+    .home_parts {
+      flex-direction: column;
+      height: auto;
+      position: relative;
+      padding-left: 22px;
+      padding-bottom: 0px;
+    }
+    .home_slider_item {
+      position: absolute;
+      top: 400px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: auto;
+      opacity: 0;
+      transition: opacity 1s;
+      margin-bottom: 0;
+    }
+    .home_slider_item.active {
+      opacity: 1; /* アクティブなスライドを表示 */
+    }
+    .home_slider_item img {
+      max-width: 100%; /* 画像の幅を親要素に合わせる */
+      height: auto; /* アスペクト比を維持 */
+    }
+
+    /*コンセプトエリア*/
+    .concept {
+      max-width: 767px;
+      padding-top: 400px;
+      display: flex;
+      flex-direction: column;
+    }
+    .concept_background {
+      margin-top: 130px;
+      height: 600px;
+    }
+    .concept_text {
+      max-width: 375px;
+    }
+    .concept h2 {
+      font-size: 25px;
+      font-weight: normal;
+      padding-top: 75px;
+      text-align: center;
+    }
+    .concept p {
+      font-size: 14px;
+      line-height: 3.4;
+      padding-top: 60px;
+    }
+
+    /*----------------------*/
+    /*コンテンツエリア*/
+
+    .contents img {
+      max-width: 375px;
+      width: 100%;
+    }
+
+    /*----------------------*/
+    /*私についてのエリア*/
+
+    .about {
+      max-width: 767px;
+      width: 100%;
+      height: 1000px;
+      background-image: url("../images/img/wave_sp_gr@2x.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .about_contents {
+      max-width: 375px;
+      margin: 0 auto;
+    }
+    .about h2 {
+      font-size: 25px;
+      font-weight: normal;
+      padding-top: 20px;
+      padding-bottom: 40px;
+      text-align: center;
+    }
+    .about ul {
+      width: 100%;
+      flex-direction: column;
+      padding-bottom: 180px;
+      align-items: center;
+    }
+    .about_photo {
+      padding-top: 5px;
+      height: 270px;
+      align-items: center;
+    }
+    .name_p {
+      font-size: 20px;
+      padding-bottom: 30px;
+      padding-top: 40px;
+      padding-left: 0;
+    }
+    .profile_p {
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 2.2;
+      max-width: 375px;
+      padding-left: 0;
+    }
+
+    /*----------------------*/
+    /*できることエリア*/
+    .slick-prev:before,
+    .slick-next:before {
+      color: rgb(255, 255, 255);
+    }
+    .about_skill_slider {
+      max-width: 375px;
+      width: 100%;
+    }
+    .about_slider_sub {
+      font-size: 16px;
+      text-align: center;
+      padding-top: 80px;
+      padding-bottom: 30px;
+    }
+    /*コーディング*/
+    .coding,
+    .design,
+    .writing,
+    .others {
+      position: relative;
+      text-align: center;
+    }
+    .skill_img {
+      position: absolute;
+      width: 100%;
+      height: 400px;
+      top: -93px;
+      left: 0%;
+      padding-top: 40px;
+      zoom: 110%;
+    }
+    .coding_icon {
+      position: relative;
+      top: 15px;
+      left: -2%;
+      height: 100%;
+      margin: 0 auto;
+      zoom: 80%;
+    }
+    .coding_label {
+      font-size: 15px;
+      font-weight: normal;
+      position: relative;
+      top: -160px;
+      left: 0;
+      padding-top: 100px;
+      padding-bottom: 20px;
+    }
+    .coding_skill {
+      font-size: 13px;
+      font-weight: normal;
+      position: relative;
+      top: -185px;
+      left: 0px;
+    }
+    /*デザイン*/
+    .design_icon {
+      position: relative;
+      top: -28px;
+      left: -16%;
+      height: 100%;
+      margin: 0 auto;
+      zoom: 100%;
+    }
+    .design_label {
+      font-size: 15px;
+      font-weight: normal;
+      position: relative;
+      top: -160px;
+      left: 0;
+      padding-top: 30px;
+      padding-bottom: 20px;
+    }
+    .design_skill {
+      font-size: 13px;
+      font-weight: normal;
+      position: relative;
+      top: -185px;
+      left: 0px;
+    }
+    /*ライティング*/
+    .writing_icon {
+      position: relative;
+      top: -30px;
+      left: -18%;
+      height: 100%;
+      margin: 0 auto;
+      zoom: 90%;
+    }
+    .writing_label {
+      font-size: 15px;
+      font-weight: normal;
+      position: relative;
+      top: -160px;
+      left: 0;
+      padding-top: 21px;
+      padding-bottom: 20px;
+    }
+    .writing_skill {
+      font-size: 13px;
+      font-weight: normal;
+      position: relative;
+      top: -185px;
+      left: 0px;
+    }
+    /*その他*/
+    .others_icon {
+      position: relative;
+      top: -70px;
+      left: -33%;
+      height: 100%;
+      margin: 0 auto;
+      zoom: 86%;
+    }
+    .others_label {
+      font-size: 15px;
+      font-weight: normal;
+      position: relative;
+      top: -230px;
+      left: 0;
+      padding-top: 21px;
+      padding-bottom: 20px;
+    }
+    .others_skill {
+      font-size: 13px;
+      font-weight: normal;
+      position: relative;
+      top: -255px;
+      left: 0px;
+    }
+
+    /*----------------------*/
+    /*つくったものエリア*/
+    .container_sp_1,
+    .container_sp_2 {
+      display: block;
+    }
+    .container_pc_1,
+    .container_pc_2 {
+      display: none;
+    }
+    .works {
+      padding-top: 50px;
+      padding-bottom: 60px;
+      max-width: 767px;
+      height: 800px;
+      width: 100%;
+    }
+    .works_title {
+      max-width: 375px;
+      margin: 0 auto;
+    }
+    .works h2 {
+      padding-bottom: 66px;
+      padding-top: 66px;
+      font-size: 25px;
+      font-weight: normal;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .container_sp_1 {
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 100px;
+    }
+    .container_sp_2 {
+      flex-direction: column;
+      gap: 25px;
+      flex-direction: row-reverse;
+    }
+    .web_design,
+    .glass_art {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      height: 175px;
+      width: 60%;
+      padding-top: 100px;
+      justify-content: center;
+      position: relative; /* moreの基準とする */
+    }
+    .web_design_image {
+      padding-top: 50px;
+      align-items: center;
+    }
+    .glass_art_image {
+      align-items: center;
+      padding-top: 50px;
+    }
+    .more_1 {
+      font-size: 18px;
+      position: absolute; /* 白背景内で右下に配置 */
+      right: 10px;
+      bottom: 10px;
+    }
+    .more_2 {
+      font-size: 18px;
+      position: absolute; /* 白背景内で右下に配置 */
+      right: 9%;
+      bottom: 10px;
+    }
+    .web,
+    .glass {
+      font-size: 13px;
+      font-weight: lighter;
+      align-items: center;
+      padding-left: 0px;
+    }
+
+    /*----------------------*/
+    /*お問合せエリア*/
+    .contact {
+      margin-top: -60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .contact_contents {
+      flex-direction: column;
+      align-items: center;
+      max-width: 767px;
+      width: 100%;
+      height: 600px;
+    }
+    .circle {
+      min-height: 200px;
+      border-top-right-radius: 767px 200px;
+      border-top-left-radius: 767px 200px;
+      margin-left: -50px;
+      margin-right: -50px;
+      background: #fff;
+    }
+    .contact h2 {
+      white-space: nowrap;
+      font-size: 25px;
+      font-weight: normal;
+      text-align: center;
+      padding-top: 0px;
+    }
+    .contact_drawing {
+      padding-top: 0px;
+      zoom: 60%;
+    }
+    .contact_parts {
+      padding-top: 100px;
+      width: 30px;
+    }
+    .contact ul {
+      flex-direction: column;
+      align-items: center;
+    }
+    .contact_btn {
+      font-size: 13px;
+      padding-top: 43px;
+      white-space: nowrap;
+    }
+    .mail_icon {
+      width: 34px;
+      padding-top: 20px;
+      padding-bottom: 50px;
+      padding-left: 3%;
+    }
+
+    /*----------------------*/
+    /*フッターエリア*/
+    .footer_era {
+      background-image: url("../images/img/wave_sp_bl@2x.png");
+      padding-top: 0px;
+      background-size: cover;
+    }
+    .footer {
+      max-width: 765px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .footer_a {
+      flex-direction: column;
+      font-size: 12px;
+      justify-content: center;
+      white-space: nowrap;
+      padding-top: 20px;
+    }
+    .footer_a li {
+      margin: 25px 25px 25px;
+    }
+    .sns_rnk {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .instagram_icon,
+    .x_icon {
+      width: 29px;
+      margin: 20px 0px 40px;
+      display: flex;
+      align-items: center;
+    }
+    .sns_rnk img {
+      width: 100%;
+      height: auto;
+    }
+    .copyright {
+      font-size: 8px;
+      font-weight: lighter;
+    }
+
+    /*----------------------*/
+    /*スクロールエリア*/
+    main {
+      position: relative;
+      overflow-x: hidden;
+    }
+    footer {
+      margin-top: -150px;
+    }
+    .scroll_circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 1px solid #cfcfcf;
+      position: relative;
+      z-index: 2;
+    }
+    .scrolldown span {
+      position: absolute;
+      right: 35px;
+      bottom: 19px;
+      color: #cfcfcf;
+      font-size: 9px;
+      letter-spacing: 0.05em;
+      -ms-writing-mode: tb-rl;
+      -webkit-writing-mode: vertical-rl;
+      writing-mode: vertical-rl;
+      transform: rotate(270deg);
+    }
+    .scrolldown:before {
+      content: "";
+      position: absolute;
+      bottom: 18px;
+      right: 22px;
+      width: 1px;
+      height: 8px;
+      background: #cfcfcf;
+      transform: skewX(31deg);
+    }
+    .scrolldown:after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      right: 20px;
+      width: 1px;
+      height: 41px;
+      background: #cfcfcf;
+    }
+    /* トップ */
+    .top.scroll_circle {
+      top: 540px;
+      left: 50%;
+    }
+    /* フッター */
+    .bottom.scroll_circle {
+      top: -250px;
+      right: -130px;
+      margin-left: auto;
+    }
+    .bottom .scrolldown span {
+      right: auto;
+      left: 62px;
+      bottom: 40px;
+      transform: rotate(0deg);
+    }
+    .bottom .scrolldown:before {
+      right: auto;
+      left: 69.5px;
+      bottom: 146px;
+    }
+    .bottom .scrolldown:after {
+      right: auto;
+      left: 60px;
+      top: auto;
+      bottom: 17px;
+    }
+    /*----------------------*/
+  }
 }

@@ -23,8 +23,8 @@
         <header id="header">
             <div class="header_wrap">
                 <h1 class="header_logo">Aki Design</h1>
-                <nav class="header_nav">
-                    <ul class="header_ul">
+                <nav class="header_pc_nav">
+                    <ul class="header_pc_ul">
                         <li><a href="#home">ホーム</a></li>
                         <li><a href="#concept">コンセプト</a></li>
                         <li><a href="#contents">コンテンツ</a></li>
@@ -33,48 +33,67 @@
                         <li><a href="#contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
+                <div class="sp_btn">
+                    <span></span>
+                </div>
+                <nav class="header_sp_nav">
+                    <div class="home_sp_circle"><img src="images/img/blob.svg" alt="青い丸">
+                        <ul class="header_sp_ul">
+                            <li><a href="#home">ホーム</a></li>
+                            <li><a href="#concept">コンセプト</a></li>
+                            <li><a href="#contents">コンテンツ</a></li>
+                            <li><a href="#about">私について</a></li>
+                            <li><a href="#works">つくったもの</a></li>
+                            <li><a href="#contact">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </nav>
             </div>
         </header>
 
         <main>
             <section class="home" id="home">
-                <h2>かさなるチカラ</h2>
-            </section>
-            <div class="home_slider">
-                <div class="home_slider_item">
-                    <picture>
-                        <source srcset="images/img/shake_hands.jpg">
-                        <img src="images/img/shake_hands.jpg" alt="手を合わせる画像">
-                    </picture>
-                </div>
-                <div class="home_slider_item">
-                    <picture>
-                        <source srcset="images/img/hands_2.jpg">
-                        <img src="images/img/hands_2.jpg" alt="手を重ねる画像">
-                    </picture>
-                </div>
-                <div class="home_slider_item">
-                    <picture>
-                        <source srcset="images/img/hands_3.jpg">
-                        <img src="images/img/hands_3.jpg" alt="握手する画像">
+                <ul class="home_parts">
+                    <li>
+                        <h2>かさなるチカラ</h2>
+                    </li>
+                    <li class="home_slider_item">
+                        <picture>
+                            <img src="images/img/shake_hands.jpg" alt="手を合わせる画像">
+                        </picture>
+                    </li>
+                    <li class="home_slider_item">
+                        <picture>
+                            <img src="images/img/hands_2.jpg" alt="手を重ねる画像">
+                        </picture>
+                    </li>
+                    <li class="home_slider_item">
+                        <picture>
+                            <img src="images/img/hands_3.jpg" alt="握手する画像">
+                        </picture>
+                    </li>
+                </ul>
 
-                    </picture>
-                </div>
-                <div class="circle_home"></div>
+            </section>
+            <!-- ヘッダーの矢印 -->
+            <div class="top scroll_circle">
                 <div class="scrolldown"><span>Scroll</span></div>
             </div>
+            <!------------------>
             <section class="concept" id="concept">
                 <div>
                     <div class="concept_background">
-                        <h2>おもい</h2>
-                        <p>人と人とのかさなりはすごいチカラ。<br>
-                            手を取り合うことで<br>
-                            ひとりでは描けなかった<br>
-                            想像以上の世界を描ことができる。<br>
-                            そして思ってもみなかった景色を見ることができる。<br>
-                            人生はかさなりで彩られる。<br>
-                            私はかさなるを大切にしています。<br>
-                        </p>
+                        <div class="concept_text">
+                            <h2>おもい</h2>
+                            <p>人と人とのかさなりはすごいチカラ。<br>
+                                手を取り合うことで<br>
+                                ひとりでは描けなかった<br>
+                                想像以上の世界を描ことができる。<br>
+                                そして思ってもみなかった景色を見ることができる。<br>
+                                人生はかさなりで彩られる。<br>
+                                私はかさなるを大切にしています。<br>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -85,8 +104,6 @@
             </section>
             <section class="about" id="about">
                 <div class="about_contents">
-                    <!-- <img class="about_background_color" src="images/img/wave_gr_1.png" alt="波模様green_1"> -->
-                    <!-- <div class="about_background_color_2"></div> -->
                     <h2>私について</h2>
                     <ul>
                         <li>
@@ -162,30 +179,45 @@
             </section>
 
             <section class="works" id="works">
-                <h2>つくったもの</h2>
-                <div class="container_1">
+                <div class="works_title">
+                    <h2>つくったもの</h2>
+                </div>
+                <div class="container_pc_1">
                     <div class="web_design">
-
                         <img class="web_design_image" id="works_Web_design" src="images/img/works_web.jpg"
                             alt="ウェブデザイン">
-
                         <p class="more_1">more</p>
                     </div>
                     <h3 class="web">Web Design</h3>
-                    </ul>
+                </div>
+                <div class="container_pc_2">
+                    <div class="glass_art">
+                        <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
+                            alt="グラスアート">
+                        <p class="more_2">more</p>
+                    </div>
+                    <h3 class="glass">Glass Art</h3>
+                </div>
 
-                    <div class="container_2"></div>
-                    <ul class="glass_art">
-                        <li>
-                            <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
-                                alt="グラスアート">
-                        </li>
-                        <li class="more_2">more</li>
-                        <li class="glass">Glass Art</li>
+                <div class="container_sp_1">
+                    <div class="web_design">
+                        <h3 class="web">Web Design</h3>
+                        <img class="web_design_image" id="works_Web_design" src="images/img/works_web.jpg"
+                            alt="ウェブデザイン">
+                        <p class="more_1">more</p>
+                    </div>
 
-
-                    </ul>
+                </div>
+                <div class="container_sp_2">
+                    <div class="glass_art">
+                        <h3 class="glass">Glass Art</h3>
+                        <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
+                            alt="グラスアート">
+                        <p class="more_2">more</p>
+                    </div>
+                </div>
             </section>
+
             <section class="contact" id="contact">
                 <div class="circle">
                     <div class="contact_contents">
@@ -203,17 +235,18 @@
                     </div>
                 </div>
             </section>
+            <!-- フッターの矢印 -->
+
+            <div class="bottom scroll_circle">
+                <div class="scrolldown"><span>Top</span></div>
+            </div>
+
+            <!------------------>
         </main>
 
-        <div class="circle_footer"></div>
-        <div class="scrollup"><span>Top</span></div>
-        <div class="arrow_up_1"></div>
-        <div class="arrow_up_2"></div>
         <footer>
             <div class="footer_era">
-                <!-- <img class="background_wave" src="images/img/wave_main.png" alt="背景波模様"> -->
                 <div class="footer">
-
                     <a href="#header_a">
 
                         <ul class="footer_a">
@@ -241,34 +274,40 @@
         </footer>
     </div>
     <script>
-        $(document).ready(function () {
-            $('.about_slider').slick({
-                dots: false,
-                infinite: true,
-                speed: 500,
-                fade: true,
-                cssEase: 'linear',
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 5000
-            });
-        });
         $(function () {
-            var items = $('.home_slider_item');
-            var index = 0;
+            $('.sp_btn').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.header_sp_nav').fadeToggle();
+            });
+            $(document).ready(function () {
+                $('.about_slider').slick({
+                    dots: false,
+                    infinite: true,
+                    speed: 500,
+                    fade: true,
+                    cssEase: 'linear',
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 5000
+                });
+            });
+            $(function () {
+                var items = $('.home_slider_item');
+                var index = 0;
 
-            function changeSlide() {
-                items.eq(index).removeClass('active');
-                index = (index + 1) % items.length;
-                items.eq(index).addClass('active');
-            }
+                function changeSlide() {
+                    items.eq(index).removeClass('active');
+                    index = (index + 1) % items.length;
+                    items.eq(index).addClass('active');
+                }
 
-            // 初回実行
-            changeSlide();
+                // 初回実行
+                changeSlide();
 
-            // 定期的にスライドを切り替える
-            setInterval(changeSlide, 7000);
+                // 定期的にスライドを切り替える
+                setInterval(changeSlide, 7000);
+            });
         });
 
 
