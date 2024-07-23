@@ -186,7 +186,7 @@ textarea.c-form__input {
   padding-bottom: 30px;
 }
 
-@media screen and (max-width: 910px) {
+@media screen and (max-width: 1100px) {
   .header_pc_nav {
     display: none;
   }
