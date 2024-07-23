@@ -395,7 +395,7 @@ textarea.c-form__input {
     }
     .c-form__submit button:hover {
       color: #a0a08e;
-      background-color: #a0a08e(90%);
+      background-color: #a0a08e80;
     }
 
     /*----------------------*/
