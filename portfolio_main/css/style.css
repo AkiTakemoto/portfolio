@@ -637,13 +637,23 @@ h2 {
     display: block;
     height: 23px;
     cursor: pointer;
-    z-index: 3;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .home_sp_circle {
     z-index: 5;
     width: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
+    height: 100vh;
+  }
+  .home_sp_circle img {
+    transform: rotate(45deg);
+    position: absolute;
+    top: -100px;
+    width: 150%;
   }
   .sp_btn span {
     display: block;
@@ -672,9 +682,6 @@ h2 {
   .sp_btn span::after {
     top: 10px;
   }
-  .home_sp_circle img {
-    zoom: 150%;
-  }
 
   /*ばつ印*/
   .sp_btn.open span {
@@ -689,6 +696,7 @@ h2 {
     transform: rotate(135deg);
   }
   .header_sp_nav {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;

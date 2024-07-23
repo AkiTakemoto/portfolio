@@ -309,12 +309,15 @@ h4 {
     display: none;
   }
 
-  /*ハンバーガーメニューエリア
+  /*ハンバーガーメニューエリア*/
   .sp_btn {
     display: block;
     height: 23px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .home_sp_circle {
     z-index: 5;
@@ -349,8 +352,8 @@ h4 {
   .sp_btn span::after {
     top: 10px;
   }
-  */
-  /*ばつ印
+
+  /*ばつ印*/
   .sp_btn.open span {
     background: transparent;
   }
@@ -363,16 +366,17 @@ h4 {
     transform: rotate(135deg);
   }
   .header_sp_nav {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     background: #8b8c8c;
     z-index: 4;
   }
   .header_sp_nav.active {
-    display: flex; 
+    display: flex;
   }
   .header_sp_nav ul {
     display: flex;
@@ -391,7 +395,7 @@ h4 {
     position: relative;
   }
   .header_sp_nav a {
-    position: relative; 
+    position: relative;
   }
   .header_sp_nav a::after {
     content: "";
@@ -414,24 +418,21 @@ h4 {
     width: 100%;
   }
 }
-*/
+*/ main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
-  main {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+.container {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
-  .container {
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .container_item {
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+.container_item {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media screen and (max-width: 767px) {
