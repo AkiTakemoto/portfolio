@@ -18,26 +18,32 @@
                 <h1 class="header_logo">Aki Design</h1>
                 <nav class="header_pc_nav">
                     <ul class="header_pc_ul">
-                        <li><a href="#home">ホーム</a></li>
-                        <li><a href="#concept">コンセプト</a></li>
-                        <li><a href="#contents">コンテンツ</a></li>
-                        <li><a href="#about">私について</a></li>
-                        <li><a href="#works">つくったもの</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
+
+                        <li><a href="../index.html#home">ホーム</a></li>
+                        <li><a href="../index.html#concept">コンセプト</a></li>
+                        <li><a href="../index.html#contents">コンテンツ</a></li>
+                        <li><a href="../index.html#about">私について</a></li>
+                        <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
+
+
+                        <li><a href="../index.html#contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <div class="sp_btn">
                     <span></span>
                 </div>
                 <nav class="header_sp_nav">
-                    <div class="home_sp_circle"><img src="images/blob.svg" alt="青い丸">
+                    <div class="home_sp_circle"><img src="images/blue_circle.svg" alt="青い丸">
                         <ul class="header_sp_ul">
-                            <li><a href="#home">ホーム</a></li>
-                            <li><a href="#concept">コンセプト</a></li>
-                            <li><a href="#contents">コンテンツ</a></li>
-                            <li><a href="#about">私について</a></li>
-                            <li><a href="#works">つくったもの</a></li>
-                            <li><a href="#contact">お問い合わせ</a></li>
+
+                            <li><a href="../index.html#home">ホーム</a></li>
+                            <li><a href="../index.html#concept">コンセプト</a></li>
+                            <li><a href="../index.html#contents">コンテンツ</a></li>
+                            <li><a href="../index.html#about">私について</a></li>
+                            <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
+
+
+                            <li><a href="../index.html#contact">お問い合わせ</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -59,17 +65,18 @@
 <footer>
     <div class="footer_era">
         <div class="footer">
-            <a href="#header_a">
-
+            <nav class="footer_nav">
                 <ul class="footer_a">
-                    <li><a href="#home">ホーム</a></li>
-                    <li><a href="#concept">おもい</a></li>
-                    <li><a href="#contents">コンテンツ</a></li>
-                    <li><a href="#about">私について</a></li>
-                    <li><a href="#works">つくったもの</a></li>
-                    <li><a href="#contact">お問い合わせ</a></li>
+                    <li><a href="../index.html#home">ホーム</a></li>
+                    <li><a href="../index.html#concept">コンセプト</a></li>
+                    <li><a href="../index.html#contents">コンテンツ</a></li>
+                    <li><a href="../index.html#about">私について</a></li>
+                    <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
+
+
+                    <li><a href="../index.html#contact">お問い合わせ</a></li>
                 </ul>
-            </a>
+            </nav>
             <ul class="sns_rnk">
                 <li class="instagram_icon">
                     <img src="images/Instagram_icon.svg" alt="Instagram">
@@ -84,5 +91,19 @@
         </div>
     </div>
 </footer>
+<script>
+    $(function () {
+        $('.sp_btn').on('click', function () {
+            $('.sp_btn').toggleClass('open');
+            $('.header_sp_nav').fadeToggle();
+        });
+        $('.header_sp_nav a').on('click', function () {
+            $('.header_sp_nav').fadeOut();
+            $('.sp_btn').removeClass('open');
+        });
+    });
+
+
+</script>
 
 </html>

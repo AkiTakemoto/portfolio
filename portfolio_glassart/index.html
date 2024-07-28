@@ -37,7 +37,7 @@
                     <span></span>
                 </div>
                 <nav class="header_sp_nav">
-                    <div class="home_sp_circle"><img src="img/blob.svg" alt="青い丸">
+                    <div class="home_sp_circle"><img src="img/blue_circle.svg" alt="青い丸">
                         <ul class="header_sp_ul">
                             <li><a href="#home">ホーム</a></li>
                             <li><a href="#concept">コンセプト</a></li>
@@ -96,17 +96,18 @@
         <footer>
             <div class="footer_era">
                 <div class="footer">
-                    <a href="#header_a">
-
+                    <nav class="footer_nav">
                         <ul class="footer_a">
-                            <li><a href="#home">ホーム</a></li>
-                            <li><a href="#concept">おもい</a></li>
-                            <li><a href="#contents">コンテンツ</a></li>
-                            <li><a href="#about">私について</a></li>
-                            <li><a href="#works">つくったもの</a></li>
-                            <li><a href="#contact">お問い合わせ</a></li>
+                            <li><a href="../index.html#home">ホーム</a></li>
+                            <li><a href="../index.html#concept">コンセプト</a></li>
+                            <li><a href="../index.html#contents">コンテンツ</a></li>
+                            <li><a href="../index.html#about">私について</a></li>
+                            <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
+
+
+                            <li><a href="../index.html#contact">お問い合わせ</a></li>
                         </ul>
-                    </a>
+                    </nav>
                     <ul class="sns_rnk">
                         <li class="instagram_icon">
                             <img src="img/Instagram_icon.svg" alt="Instagram">
@@ -122,7 +123,21 @@
             </div>
         </footer>
     </div>
+    <script>
+        $(function () {
+            $('.sp_btn').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.header_sp_nav').fadeToggle();
+            });
+        });
 
+
+
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"
+        integrity="sha512-Ixzuzfxv1EqafeQlTCufWfaC6ful6WFqIz4G+dWvK0beHw0NVJwvCKSgafpy5gwNqKmgUfIBraVwkKI+Cz0SEQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

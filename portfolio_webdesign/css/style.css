@@ -35,12 +35,14 @@ main > section {
   padding-left: 30px;
   white-space: nowrap;
   padding-right: 15px;
+  position: relative;
 }
 
 .header_pc_nav a {
   position: relative;
   display: inline-block;
   transition: color 0.6s ease-out;
+  padding-bottom: 3px;
 }
 .header_pc_nav {
   max-width: 1000px;
@@ -48,11 +50,34 @@ main > section {
 }
 
 .dropdown_lists {
-  display: none; /*デフォルトでは非表示の状態にしておく*/
+  /*display: none; /*デフォルトでは非表示の状態にしておく*/
   width: 100%;
   position: absolute;
   top: 60px;
-  left: 0;
+  left: 16%;
+  z-index: 1000;
+}
+.works_child_1 {
+  position: relative;
+  top: 3px;
+  left: -2%;
+}
+.works_child_2 {
+  position: relative;
+  top: 10px;
+  left: 1%;
+}
+.hnavi_list:hover .dropdown_lists {
+  display: block; /* ホバー時に表示 */
+}
+
+.header_pc_ul li li a {
+  border-top: 1px solid #eee;
+}
+
+.header_pc_ul li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
 }
 
 .web_design,
@@ -73,17 +98,6 @@ main > section {
   color: #5b573e;
   text-decoration: none;
   position: relative;
-}
-.hnavi_list:hover .dropdown_lists {
-  display: block;
-}
-
-.header_pc_ul li li a {
-  border-top: 1px solid #eee;
-}
-.header_pc_ul li:hover > ul > li {
-  height: 2rem;
-  overflow: visible;
 }
 
 .header_pc_nav a::after {
@@ -257,7 +271,7 @@ h4 {
   height: 440px;
 }
 .footer_era {
-  padding-top: 300px;
+  padding-top: 250px;
   background-image: url("../imgs/wave_main.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -277,6 +291,30 @@ h4 {
 }
 .footer_a li {
   margin: 0 10px;
+}
+
+.footer_nav a {
+  position: relative;
+}
+
+.footer_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(91, 87, 62, 70);
+  width: 100%;
+  height: 1px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s ease-out;
+  /*opacity: 0;
+  transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
+}
+.footer_nav a:hover::after {
+  transform: scale(1, 1);
+  transform: right top;
+  /*opacity: 1;  下線がふわっと出るタイプ*/
 }
 .sns_rnk {
   display: flex;
@@ -309,6 +347,18 @@ h4 {
     display: none;
   }
 
+  .header_sp_nav {
+    display: block;
+  }
+  .header_logo {
+    font-family: "Hubballi";
+    font-size: 19px;
+    font-weight: normal;
+    padding-top: 30px;
+    padding-left: 22px;
+    white-space: nowrap;
+  }
+
   /*ハンバーガーメニューエリア*/
   .sp_btn {
     display: block;
@@ -319,20 +369,33 @@ h4 {
     top: 0;
     right: 0;
   }
+
   .home_sp_circle {
     z-index: 5;
-    width: 100%;
+    width: 130%;
     overflow-x: hidden;
     position: relative;
+    height: 100vh;
+  }
+  .home_sp_circle img {
+    transform: rotate(0deg);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 110%;
+    max-width: 1100px;
+    min-width: 1100px;
+    max-height: 860px;
   }
   .sp_btn span {
     display: block;
     width: 33px;
-    height: 3px;
+    height: 1px;
     border-radius: 2px;
-    background: #fff;
+    background: #5b573e;
     position: relative;
-    top: 10px;
+    top: 45px;
+    right: 70%;
     transition: 0.3s;
   }
   .sp_btn span::before,
@@ -340,17 +403,17 @@ h4 {
     content: "";
     display: block;
     width: 33px;
-    height: 3px;
+    height: 1px;
     border-radius: 2px;
-    background: #fff;
+    background: #5b573e;
     position: absolute;
     transition: 0.3s;
   }
   .sp_btn span::before {
-    bottom: 10px;
+    bottom: 12px;
   }
   .sp_btn span::after {
-    top: 10px;
+    top: 12px;
   }
 
   /*ばつ印*/
@@ -383,26 +446,26 @@ h4 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 20%;
     height: 100%;
   }
   .header_sp_nav li {
-    padding: 20px;
-    color: #fff;
+    margin: 20px;
+    padding-bottom: 3px;
+    color: #5b573e;
     font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
       "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
     font-weight: lighter;
     font-size: 14px;
     position: relative;
   }
-  .header_sp_nav a {
-    position: relative;
-  }
+
   .header_sp_nav a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #fff;
+    background-color: #5b573e;
     width: 100%;
     height: 1px;
     transform: scale(0, 1);
@@ -417,24 +480,24 @@ h4 {
     max-width: 100%;
     width: 100%;
   }
-}
-*/ main {
-  max-width: 1000px;
-  margin: 0 auto;
-}
 
-.container {
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
 
-.container_item {
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  .container {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
+  .container_item {
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
 @media screen and (max-width: 767px) {
   /*全体*/
   picture {
@@ -605,7 +668,7 @@ h4 {
   /*フッターエリア*/
   .footer_era {
     background-image: url("../imgs/wave_sp_bl@2x.png");
-    padding-top: 40px;
+    padding-top: 0px;
     background-size: cover;
   }
   .footer {
@@ -618,7 +681,7 @@ h4 {
     font-size: 12px;
     justify-content: center;
     white-space: nowrap;
-    padding-top: 20px;
+    padding-top: 62px;
   }
   .footer_a li {
     margin: 25px 25px 25px;

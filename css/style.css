@@ -121,6 +121,7 @@ main > section {
   position: relative;
   display: inline-block;
   transition: color 0.6s ease-out;
+  padding-bottom: 3px;
 }
 .header_pc_nav {
   max-width: 1000px;
@@ -185,7 +186,7 @@ h2 {
 }
 
 .home_slider_item img {
-  max-width: 170%; /* 親要素の幅に合わせる */
+  max-width: 100%; /* 親要素の幅に合わせる */
   height: auto; /* アスペクト比を維持 */
 }
 
@@ -220,6 +221,7 @@ h2 {
 .concept h2 {
   padding-top: 87px;
   white-space: nowrap;
+  margin: 5%;
 }
 
 .concept p {
@@ -227,6 +229,8 @@ h2 {
   line-height: 3.75;
   font-feature-settings: "palt";
   padding-top: 96px;
+  margin: 5%;
+  padding-top: 0px;
 }
 
 /*コンテンツエリア*/
@@ -277,6 +281,7 @@ h2 {
 .about_photo {
   padding-top: 5px;
   height: 410px;
+  padding-left: 3%;
 }
 
 .name_p {
@@ -290,6 +295,7 @@ h2 {
   font-size: 18px;
   line-height: 1.9;
   padding-left: 10%;
+  margin-right: 5%;
   height: 500px;
 }
 
@@ -308,6 +314,7 @@ h2 {
   font-size: 30px;
   padding-top: 80px;
   padding-bottom: 30px;
+  margin-left: 5%;
 }
 
 /*コーディング*/
@@ -318,130 +325,79 @@ h2 {
 .others {
   position: relative;
   text-align: center;
+  margin-bottom: 65px;
 }
 
 .skill_img {
-  position: absolute;
   width: 100%;
-  height: 400px;
-  top: -40px;
-  left: 0%;
+  height: 450px;
   padding-top: 40px;
   zoom: 110%;
 }
 
-.coding_icon {
-  position: relative;
-  top: 10%;
-  left: 10px;
-  height: 100%;
-  margin: 0 auto;
-  padding-top: 0px;
-  zoom: 100%;
-}
-
-.coding_label {
-  font-size: 22px;
-  font-weight: normal;
-  position: relative;
-  top: -90px;
-  left: -147px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.coding_skill {
-  font-size: 18px;
-  font-weight: normal;
-  position: relative;
-  top: -125px;
-  left: 0px;
-}
-
-/*デザイン*/
+.coding_icon,
 .design_icon {
-  position: relative;
-  top: -20px;
-  left: 20px;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 54%;
+  transform: translateX(-50%);
+  z-index: -1;
+  height: 60%;
   margin: 0 auto;
-  zoom: 105%;
-}
-
-.design_label {
-  font-size: 22px;
-  font-weight: normal;
-  position: relative;
-  top: -114px;
-  left: -94px;
   padding-top: 20px;
-  padding-bottom: 20px;
 }
 
-.design_skill {
-  font-size: 18px;
-  font-weight: normal;
-  position: relative;
-  top: -151px;
-  left: 0px;
-}
-
-/*ライティング*/
 .writing_icon {
-  position: relative;
-  top: -30px;
-  left: 20px;
-  height: 100%;
+  position: absolute;
+  top: -5px;
+  left: 55%;
+  transform: translateX(-50%);
+  z-index: -1;
+  height: 68%;
   margin: 0 auto;
-  padding-top: 0px;
-  zoom: 106%;
+  padding-top: 9px;
 }
 
-.writing_label {
-  font-size: 22px;
-  font-weight: normal;
-  position: relative;
-  top: -163px;
-  left: -89px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.writing_skill {
-  font-size: 18px;
-  font-weight: normal;
-  position: relative;
-  top: -201px;
-  left: 0px;
-}
-
-/*その他*/
 .others_icon {
-  position: relative;
-  top: -85px;
-  left: 30px;
-  height: 100%;
+  position: absolute;
+  top: -38px;
+  left: 56%;
+  transform: translateX(-50%);
+  z-index: -1;
+  height: 80%;
   margin: 0 auto;
   padding-top: 0px;
-  zoom: 105%;
 }
 
+.skill_text {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.coding_label,
+.design_label,
+.writing_label,
 .others_label {
   font-size: 22px;
   font-weight: normal;
-  position: relative;
-  top: -263px;
-  left: -89px;
   padding-top: 20px;
   padding-bottom: 20px;
+  position: relative;
+  top: -220px;
+  left: 0%;
 }
 
+.coding_skill,
+.design_skill,
+.writing_skill,
 .others_skill {
   font-size: 18px;
   font-weight: normal;
   position: relative;
-  top: -301px;
-  left: 0px;
+  top: -220px;
+  left: 0%;
 }
 
 /*つくったものエリア*/
@@ -467,6 +423,7 @@ h2 {
   padding-bottom: 66px;
   font-size: 40px;
   white-space: nowrap;
+  margin-left: 5%;
 }
 .container_pc_1 {
   display: flex;
@@ -551,14 +508,18 @@ h2 {
 .contact h2 {
   white-space: nowrap;
   padding-top: 100px;
+  margin-left: 10%;
 }
 .contact_drawing {
   display: inline-block;
-  padding-top: 100px;
+  padding-top: 8%;
+  padding-right: 0%;
+  width: 76%;
 }
 .contact_parts {
   padding-top: 100px;
-  width: 350px;
+  width: 80%;
+  white-space: nowrap;
 }
 .contact ul {
   display: flex;
@@ -566,17 +527,18 @@ h2 {
 .contact_btn {
   font-size: 24px;
   padding-top: 73px;
+  margin-left: 10%;
 }
 .mail_icon {
-  width: 40px;
-  padding-top: 73px;
+  width: 50px;
+  padding-top: 62px;
   padding-bottom: 50px;
   padding-left: 3%;
 }
 
 /*フッターエリア*/
 .footer_era {
-  padding-top: 300px;
+  padding-top: 250px;
   background-image: url("../images/img/wave_main.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -593,9 +555,33 @@ h2 {
   margin: 0 auto;
   padding: 20px;
   white-space: nowrap;
+  position: relative;
 }
 .footer_a li {
   margin: 0 10px;
+}
+.footer a {
+  position: relative;
+}
+
+.footer_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(91, 87, 62, 70);
+  width: 100%;
+  height: 1px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s ease-out;
+  /*opacity: 0;
+  transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
+}
+.footer_nav a:hover::after {
+  transform: scale(1, 1);
+  transform: right top;
+  /*opacity: 1;  下線がふわっと出るタイプ*/
 }
 .sns_rnk {
   display: flex;
@@ -632,6 +618,52 @@ h2 {
     display: block;
   }
 
+  .concept {
+    max-width: 1100px;
+    padding-top: 300px;
+    display: flex;
+    flex-direction: column;
+  }
+  .concept_background {
+    margin-top: 130px;
+    height: 700px;
+  }
+  .concept_text {
+    max-width: 800px;
+  }
+
+  .about {
+    max-width: 1100px;
+    width: 100%;
+    height: 900px;
+    background-image: url("../images/img/wave_sp_gr@2x.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .about_contents {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .about h2 {
+    padding-top: 40px;
+    padding-bottom: 60px;
+    padding-left: 5%;
+  }
+
+  .about_skill_slider {
+    max-width: 800px;
+    width: 100%;
+  }
+  .works_title {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .contact_contents {
+    max-width: 800px;
+    width: 100%;
+    height: 600px;
+  }
   /*ハンバーガーメニューエリア*/
   .sp_btn {
     display: block;
@@ -642,27 +674,75 @@ h2 {
     top: 0;
     right: 0;
   }
+
+  .header_logo {
+    font-family: "Hubballi";
+    font-size: 19px;
+    font-weight: normal;
+    padding-top: 30px;
+    padding-left: 22px;
+    white-space: nowrap;
+  }
+  .home h2 {
+    max-width: 767px;
+    width: 100%;
+    padding-left: 22px;
+    font-size: 30px;
+    padding-top: 137px;
+  }
+  .home_parts {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    padding-left: 22px;
+    padding-bottom: 0px;
+  }
+  .home_slider_item {
+    position: absolute;
+    top: 480px;
+    left: 50%;
+    margin: 0 auto;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s;
+    margin-bottom: 0;
+  }
+  .home_slider_item.active {
+    opacity: 1; /* アクティブなスライドを表示 */
+  }
+  .home_slider_item img {
+    max-width: 100%; /* 画像の幅を親要素に合わせる */
+    height: auto; /* アスペクト比を維持 */
+  }
+
   .home_sp_circle {
     z-index: 5;
-    width: 100%;
+    width: 130%;
     overflow: hidden;
     position: relative;
     height: 100vh;
   }
   .home_sp_circle img {
-    transform: rotate(45deg);
+    transform: rotate(0deg);
     position: absolute;
-    top: -100px;
-    width: 150%;
+    top: 0%;
+    left: 0%;
+    width: 110%;
+    max-width: 1100px;
+    min-width: 1100px;
+    max-height: 860px;
   }
   .sp_btn span {
     display: block;
     width: 33px;
-    height: 3px;
+    height: 1px;
     border-radius: 2px;
-    background: #fff;
+    background: #5b573e;
     position: relative;
-    top: 10px;
+    top: 45px;
+    right: 70%;
     transition: 0.3s;
   }
   .sp_btn span::before,
@@ -670,17 +750,17 @@ h2 {
     content: "";
     display: block;
     width: 33px;
-    height: 3px;
+    height: 1px;
     border-radius: 2px;
-    background: #fff;
+    background: #5b573e;
     position: absolute;
     transition: 0.3s;
   }
   .sp_btn span::before {
-    bottom: 10px;
+    bottom: 12px;
   }
   .sp_btn span::after {
-    top: 10px;
+    top: 12px;
   }
 
   /*ばつ印*/
@@ -713,10 +793,12 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 20%;
     height: 100%;
   }
   .header_sp_nav li {
     margin: 20px;
+    padding-bottom: 3px;
     color: #5b573e;
     font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
       "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
@@ -765,6 +847,7 @@ h2 {
   .header_wrap {
     max-width: 767px;
     width: 100%;
+    box-sizing: border-box;
     padding-left: 22px;
     margin: 0 auto;
   }
@@ -780,7 +863,7 @@ h2 {
     max-width: 767px;
     width: 100%;
     padding-left: 22px;
-
+    box-sizing: border-box;
     font-size: 20px;
     padding-top: 137px;
   }
@@ -793,7 +876,7 @@ h2 {
   }
   .home_slider_item {
     position: absolute;
-    top: 400px;
+    top: 480px;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
@@ -898,7 +981,8 @@ h2 {
     color: rgb(255, 255, 255);
   }
   .about_skill_slider {
-    max-width: 375px;
+    margin: 5% auto;
+    max-width: 420px;
     width: 100%;
   }
   .about_slider_sub {
@@ -912,116 +996,44 @@ h2 {
   .design,
   .writing,
   .others {
-    position: relative;
-    text-align: center;
+    margin-top: -90px;
+    margin-bottom: 0;
   }
-  .skill_img {
-    position: absolute;
-    width: 100%;
-    height: 400px;
-    top: -93px;
-    left: 0%;
-    padding-top: 40px;
-    zoom: 110%;
-  }
-  .coding_icon {
-    position: relative;
-    top: 15px;
-    left: -2%;
-    height: 100%;
-    margin: 0 auto;
-    zoom: 80%;
-  }
-  .coding_label {
-    font-size: 15px;
-    font-weight: normal;
-    position: relative;
-    top: -160px;
-    left: 0;
-    padding-top: 100px;
-    padding-bottom: 20px;
-  }
-  .coding_skill {
-    font-size: 13px;
-    font-weight: normal;
-    position: relative;
-    top: -185px;
-    left: 0px;
-  }
-  /*デザイン*/
-  .design_icon {
-    position: relative;
-    top: -28px;
-    left: -16%;
-    height: 100%;
-    margin: 0 auto;
-    zoom: 100%;
-  }
-  .design_label {
-    font-size: 15px;
-    font-weight: normal;
-    position: relative;
-    top: -160px;
-    left: 0;
-    padding-top: 30px;
-    padding-bottom: 20px;
-  }
-  .design_skill {
-    font-size: 13px;
-    font-weight: normal;
-    position: relative;
-    top: -185px;
-    left: 0px;
-  }
-  /*ライティング*/
-  .writing_icon {
-    position: relative;
-    top: -30px;
-    left: -18%;
-    height: 100%;
-    margin: 0 auto;
-    zoom: 90%;
-  }
-  .writing_label {
-    font-size: 15px;
-    font-weight: normal;
-    position: relative;
-    top: -160px;
-    left: 0;
-    padding-top: 21px;
-    padding-bottom: 20px;
-  }
-  .writing_skill {
-    font-size: 13px;
-    font-weight: normal;
-    position: relative;
-    top: -185px;
-    left: 0px;
-  }
-  /*その他*/
+
+  .coding_icon,
+  .design_icon,
+  .writing_icon,
   .others_icon {
-    position: relative;
-    top: -70px;
-    left: -33%;
-    height: 100%;
-    margin: 0 auto;
-    zoom: 86%;
+    height: 50%;
+    top: 11%;
+    left: 56%;
   }
+
+  .writing_icon {
+    height: 53%;
+    top: 13%;
+    left: 58%;
+  }
+
+  .others_icon {
+    height: 67%;
+    top: 5%;
+    left: 59%;
+  }
+  .coding_label,
+  .design_label,
+  .writing_label,
   .others_label {
     font-size: 15px;
-    font-weight: normal;
-    position: relative;
-    top: -230px;
-    left: 0;
-    padding-top: 21px;
-    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
   }
+
+  .coding_skill,
+  .design_skill,
+  .writing_skill,
   .others_skill {
     font-size: 13px;
-    font-weight: normal;
-    position: relative;
-    top: -255px;
-    left: 0px;
   }
 
   /*----------------------*/
@@ -1038,7 +1050,6 @@ h2 {
     padding-top: 50px;
     padding-bottom: 60px;
     max-width: 767px;
-    height: 800px;
     width: 100%;
   }
   .works_title {
@@ -1047,20 +1058,19 @@ h2 {
   }
   .works h2 {
     padding-bottom: 66px;
-    padding-top: 66px;
+    padding-top: 30px;
     font-size: 25px;
     font-weight: normal;
     text-align: center;
     white-space: nowrap;
   }
-  .container_sp_1 {
+  .container_sp_1,
+  .container_sp_2 {
     flex-direction: column;
     gap: 25px;
     margin-bottom: 100px;
   }
   .container_sp_2 {
-    flex-direction: column;
-    gap: 25px;
     flex-direction: row-reverse;
   }
   .web_design,
@@ -1068,44 +1078,53 @@ h2 {
     display: flex;
     flex-direction: column;
     background-color: white;
-    height: 175px;
-    width: 60%;
-    padding-top: 100px;
+    max-width: 350px;
+    width: 100%;
+    max-height: 250px;
     justify-content: center;
+    margin: 0 auto;
     position: relative; /* moreの基準とする */
   }
   .web_design_image {
-    padding-top: 50px;
+    padding-top: 33px;
     align-items: center;
+    max-width: 350px;
+    width: 100%;
   }
   .glass_art_image {
+    padding-top: 29px;
     align-items: center;
-    padding-top: 50px;
+    max-width: 350px;
+    width: 100%;
   }
   .more_1 {
-    font-size: 18px;
+    font-size: 13px;
     position: absolute; /* 白背景内で右下に配置 */
-    right: 10px;
+    right: 9%;
     bottom: 10px;
   }
   .more_2 {
-    font-size: 18px;
+    font-size: 13px;
     position: absolute; /* 白背景内で右下に配置 */
     right: 9%;
     bottom: 10px;
   }
   .web,
   .glass {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: lighter;
     align-items: center;
     padding-left: 0px;
+    position: absolute;
+    top: -23px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 
   /*----------------------*/
   /*お問合せエリア*/
   .contact {
-    margin-top: -60px;
+    margin-top: -100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1119,15 +1138,17 @@ h2 {
     height: 600px;
   }
   .circle {
-    min-height: 200px;
-    border-top-right-radius: 767px 200px;
-    border-top-left-radius: 767px 200px;
-    margin-left: -50px;
-    margin-right: -50px;
+    min-height: 600px;
+    border-top-right-radius: 1500px 800px;
+    border-top-left-radius: 1500px 800px;
+    margin-left: -100px;
+    margin-right: -100px;
     background: #fff;
-    width: 100%;
+    width: 150%;
   }
+
   .contact h2 {
+    margin: 0px;
     white-space: nowrap;
     font-size: 25px;
     font-weight: normal;
@@ -1135,18 +1156,19 @@ h2 {
     padding-top: 0px;
   }
   .contact_drawing {
+    text-align: center;
     padding-top: 0px;
-    zoom: 60%;
+    zoom: 69%;
   }
   .contact_parts {
     padding-top: 100px;
-    width: 30px;
   }
   .contact ul {
     flex-direction: column;
     align-items: center;
   }
   .contact_btn {
+    margin: 0px;
     font-size: 13px;
     padding-top: 43px;
     white-space: nowrap;
@@ -1154,8 +1176,8 @@ h2 {
   .mail_icon {
     width: 34px;
     padding-top: 20px;
-    padding-bottom: 50px;
-    padding-left: 3%;
+    padding-bottom: 0px;
+    padding-left: 0;
   }
 
   /*----------------------*/
@@ -1175,7 +1197,7 @@ h2 {
     font-size: 12px;
     justify-content: center;
     white-space: nowrap;
-    padding-top: 20px;
+    padding-top: 62px;
   }
   .footer_a li {
     margin: 25px 25px 25px;
@@ -1209,6 +1231,7 @@ h2 {
   }
   footer {
     margin-top: -150px;
+    padding-top: 150px;
   }
   .scroll_circle {
     width: 60px;
@@ -1277,5 +1300,4 @@ h2 {
     top: auto;
     bottom: 17px;
   }
-  /*----------------------*/
 }

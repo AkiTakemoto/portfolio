@@ -37,7 +37,7 @@
                     <span></span>
                 </div>
                 <nav class="header_sp_nav">
-                    <div class="home_sp_circle"><img src="images/img/blob.svg" alt="青い丸">
+                    <div class="home_sp_circle"><img src="images/img/blue_circle.svg" alt="青い丸">
                         <ul class="header_sp_ul">
                             <li><a href="#home">ホーム</a></li>
                             <li><a href="#concept">コンセプト</a></li>
@@ -202,8 +202,7 @@
                 <div class="container_sp_1">
                     <div class="web_design">
                         <h3 class="web">Web Design</h3>
-                        <img class="web_design_image" id="works_Web_design" src="images/img/works_web.jpg"
-                            alt="ウェブデザイン">
+                        <img class="web_design_image" id="" src="images/img/works_web.jpg" alt="ウェブデザイン">
                         <p class="more_1">more</p>
                     </div>
 
@@ -211,8 +210,7 @@
                 <div class="container_sp_2">
                     <div class="glass_art">
                         <h3 class="glass">Glass Art</h3>
-                        <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
-                            alt="グラスアート">
+                        <img class="glass_art_image" id="" src="images/img/works_Glassart@2x-80.jpg" alt="グラスアート">
                         <p class="more_2">more</p>
                     </div>
                 </div>
@@ -248,15 +246,16 @@
             <div class="footer_era">
                 <div class="footer">
                     <a href="#header_a">
-
-                        <ul class="footer_a">
-                            <li><a href="#home">ホーム</a></li>
-                            <li><a href="#concept">おもい</a></li>
-                            <li><a href="#contents">コンテンツ</a></li>
-                            <li><a href="#about">私について</a></li>
-                            <li><a href="#works">つくったもの</a></li>
-                            <li><a href="#contact">お問い合わせ</a></li>
-                        </ul>
+                        <nav class="footer_nav">
+                            <ul class="footer_a">
+                                <li><a href="#home">ホーム</a></li>
+                                <li><a href="#concept">おもい</a></li>
+                                <li><a href="#contents">コンテンツ</a></li>
+                                <li><a href="#about">私について</a></li>
+                                <li><a href="#works">つくったもの</a></li>
+                                <li><a href="#contact">お問い合わせ</a></li>
+                            </ul>
+                        </nav>
                     </a>
                     <ul class="sns_rnk">
                         <li class="instagram_icon">
@@ -278,6 +277,10 @@
             $('.sp_btn').on('click', function () {
                 $('.sp_btn').toggleClass('open');
                 $('.header_sp_nav').fadeToggle();
+            });
+            $('.header_sp_nav a').on('click', function () {
+                $('.header_sp_nav').fadeOut();
+                $('.sp_btn').removeClass('open');
             });
             $(document).ready(function () {
                 $('.about_slider').slick({

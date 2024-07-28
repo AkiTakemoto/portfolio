@@ -40,6 +40,7 @@ main > section {
   position: relative;
   display: inline-block;
   transition: color 0.6s ease-out;
+  padding-bottom: 3px;
 }
 .header_pc_nav {
   max-width: 1000px;
@@ -133,12 +134,12 @@ textarea.c-form__input {
 }
 .c-form__submit button:hover {
   color: #a0a08e;
-  background-color: #a0a08e(90%);
+  background-color: #a0a08e80;
 }
 
 /*フッターエリア*/
 .footer_era {
-  padding-top: 300px;
+  padding-top: 250px;
   background-image: url("../img/wave_main.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -159,6 +160,29 @@ textarea.c-form__input {
 }
 .footer_a li {
   margin: 0 10px;
+}
+.footer_nav a {
+  position: relative;
+}
+
+.footer_nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(91, 87, 62, 70);
+  width: 100%;
+  height: 1px;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: transform 0.5s ease-out;
+  /*opacity: 0;
+  transition: opacity 0.6s ease-out; 下線がふわっと出るタイプ*/
+}
+.footer_nav a:hover::after {
+  transform: scale(1, 1);
+  transform: right top;
+  /*opacity: 1;  下線がふわっと出るタイプ*/
 }
 .sns_rnk {
   display: flex;
@@ -190,28 +214,46 @@ textarea.c-form__input {
   .header_pc_nav {
     display: none;
   }
-
-  /*ハンバーガーメニューエリア
+  .header_sp_nav {
+    display: block;
+  }
+  /*ハンバーガーメニューエリア*/
   .sp_btn {
     display: block;
     height: 23px;
     cursor: pointer;
-    z-index: 5;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    right: 0;
   }
+
   .home_sp_circle {
     z-index: 5;
-    width: 100%;
+    width: 130%;
     overflow-x: hidden;
     position: relative;
+    height: 100vh;
+  }
+  .home_sp_circle img {
+    transform: rotate(0deg);
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 110%;
+    max-width: 1100px;
+    min-width: 1100px;
+    max-height: 860px;
   }
   .sp_btn span {
     display: block;
     width: 33px;
-    height: 3px;
+    height: 1px;
     border-radius: 2px;
-    background: #fff;
+    background: #5b573e;
     position: relative;
-    top: 10px;
+    top: 45px;
+    right: 70%;
     transition: 0.3s;
   }
   .sp_btn span::before,
@@ -219,20 +261,20 @@ textarea.c-form__input {
     content: "";
     display: block;
     width: 33px;
-    height: 3px;
+    height: 1px;
     border-radius: 2px;
-    background: #fff;
+    background: #5b573e;
     position: absolute;
     transition: 0.3s;
   }
   .sp_btn span::before {
-    bottom: 10px;
+    bottom: 12px;
   }
   .sp_btn span::after {
-    top: 10px;
+    top: 12px;
   }
-  */
-  /*ばつ印
+
+  /*ばつ印*/
   .sp_btn.open span {
     background: transparent;
   }
@@ -245,42 +287,43 @@ textarea.c-form__input {
     transform: rotate(135deg);
   }
   .header_sp_nav {
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     background: #8b8c8c;
     z-index: 4;
   }
   .header_sp_nav.active {
-    display: flex; 
+    display: flex;
   }
   .header_sp_nav ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 20%;
     height: 100%;
   }
   .header_sp_nav li {
-    padding: 20px;
-    color: #fff;
+    margin: 20px;
+    padding-bottom: 3px;
+    color: #5b573e;
     font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
       "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
     font-weight: lighter;
     font-size: 14px;
     position: relative;
   }
-  .header_sp_nav a {
-    position: relative; 
-  }
+
   .header_sp_nav a::after {
     content: "";
     position: absolute;
     left: 0;
     bottom: 0;
-    background-color: #fff;
+    background-color: #5b573e;
     width: 100%;
     height: 1px;
     transform: scale(0, 1);
@@ -296,149 +339,147 @@ textarea.c-form__input {
     width: 100%;
   }
 }
-*/
 
-  @media screen and (max-width: 767px) {
-    /*全体*/
-    picture {
-      max-width: 767px;
-      width: 100%;
-    }
-    main > .header {
-      max-width: 300px;
-    }
-    h2 {
-      font-size: 20px;
-      padding-top: 137px;
-    }
+@media screen and (max-width: 767px) {
+  /*全体*/
+  picture {
+    max-width: 767px;
+    width: 100%;
+  }
+  main > .header {
+    max-width: 300px;
+  }
+  h2 {
+    font-size: 20px;
+    padding-top: 137px;
+  }
 
-    /*----------------------*/
-    /*ヘッダーエリア*/
-    .header_pc_ul {
-      display: none;
-    }
-    .header_wrap {
-      max-width: 767px;
-      width: 100%;
-      padding-left: 22px;
-      margin: 0 auto;
-    }
-    .header_logo {
-      font-family: "Hubballi";
-      font-size: 19px;
-      font-weight: normal;
-      padding-top: 30px;
-      padding-left: 22px;
-      white-space: nowrap;
-    }
-    .contact_title {
-      font-size: 20px;
-      font-weight: normal;
-      padding-top: 57px;
-      padding-left: 0%;
-      padding-bottom: 38px;
-      text-align: center;
-    }
+  /*----------------------*/
+  /*ヘッダーエリア*/
+  .header_pc_ul {
+    display: none;
+  }
+  .header_wrap {
+    max-width: 767px;
+    width: 100%;
+    padding-left: 22px;
+    margin: 0 auto;
+  }
+  .header_logo {
+    font-family: "Hubballi";
+    font-size: 19px;
+    font-weight: normal;
+    padding-top: 30px;
+    padding-left: 22px;
+    white-space: nowrap;
+  }
+  .contact_title {
+    font-size: 20px;
+    font-weight: normal;
+    padding-top: 57px;
+    padding-left: 0%;
+    padding-bottom: 38px;
+    text-align: center;
+  }
 
-    .contact_sbtitle {
-      font-size: 12px;
-      font-weight: lighter;
-      text-align: center;
-      padding-bottom: 95px;
-      padding-top: 0px;
-    }
+  .contact_sbtitle {
+    font-size: 12px;
+    font-weight: lighter;
+    text-align: center;
+    padding-bottom: 95px;
+    padding-top: 0px;
+  }
 
-    .c-form {
-      max-width: 330px;
-      margin: 0 auto;
-    }
-    .c-form__item {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-evenly;
-      height: 55px;
-      margin-bottom: 20px;
-    }
+  .c-form {
+    max-width: 330px;
+    margin: 0 auto;
+  }
+  .c-form__item {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 55px;
+    margin-bottom: 20px;
+  }
 
-    .c-form__input {
-      padding: 10px;
-      width: 100%;
-      font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
-        "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
-      font-size: 12px;
-      font-weight: lighter;
-      opacity: 0.8;
-      outline: none;
-      border: 1px solid #efeeec;
-      border-radius: 3px;
-      align-items: center;
-    }
+  .c-form__input {
+    padding: 10px;
+    width: 100%;
+    font-family: "Zen Kaku Gothic Antique", "Hubballi", "游ゴシック",
+      "YuMGothic", "Hiragino Mincho ProN W3", "ヒラギノ角ゴ", "HiraKaku";
+    font-size: 12px;
+    font-weight: lighter;
+    opacity: 0.8;
+    outline: none;
+    border: 1px solid #efeeec;
+    border-radius: 3px;
+    align-items: center;
+  }
 
-    textarea.c-form__input {
-      height: 160px;
-    }
-    .c-form__submit {
-      text-align: center;
-      padding-top: 150px;
-      padding-bottom: 100px;
-    }
-    .c-form__submit button {
-      font-size: 12px;
-      font-weight: lighter;
-      color: #5b573e;
-      background-color: #efe7b4;
-      border-radius: 3px;
-      padding: 5px 32px;
-      transition: 0.8s;
-      cursor: pointer;
-      border: none;
-    }
-    .c-form__submit button:hover {
-      color: #a0a08e;
-      background-color: #a0a08e80;
-    }
+  textarea.c-form__input {
+    height: 160px;
+  }
+  .c-form__submit {
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 100px;
+  }
+  .c-form__submit button {
+    font-size: 12px;
+    font-weight: lighter;
+    color: #5b573e;
+    background-color: #efe7b4;
+    border-radius: 3px;
+    padding: 5px 32px;
+    transition: 0.8s;
+    cursor: pointer;
+    border: none;
+  }
+  .c-form__submit button:hover {
+    color: #a0a08e;
+    background-color: #a0a08e80;
+  }
 
-    /*----------------------*/
-    /*フッターエリア*/
-    .footer_era {
-      background-image: url("../img/wave_sp_bl@2x.png");
-      padding-top: 40px;
-      background-size: cover;
-    }
-    .footer {
-      max-width: 765px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .footer_a {
-      flex-direction: column;
-      font-size: 12px;
-      justify-content: center;
-      white-space: nowrap;
-      padding-top: 20px;
-    }
-    .footer_a li {
-      margin: 25px 25px 25px;
-    }
-    .sns_rnk {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-    .instagram_icon,
-    .x_icon {
-      width: 29px;
-      margin: 20px 0px 40px;
-      display: flex;
-      align-items: center;
-    }
-    .sns_rnk img {
-      width: 100%;
-      height: auto;
-    }
-    .copyright {
-      font-size: 8px;
-      font-weight: lighter;
-    }
+  /*----------------------*/
+  /*フッターエリア*/
+  .footer_era {
+    background-image: url("../img/wave_sp_bl@2x.png");
+    padding-top: 0px;
+    background-size: cover;
+  }
+  .footer {
+    max-width: 765px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .footer_a {
+    flex-direction: column;
+    font-size: 12px;
+    justify-content: center;
+    white-space: nowrap;
+    padding-top: 62px;
+  }
+  .footer_a li {
+    margin: 25px 25px 25px;
+  }
+  .sns_rnk {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .instagram_icon,
+  .x_icon {
+    width: 29px;
+    margin: 20px 0px 40px;
+    display: flex;
+    align-items: center;
+  }
+  .sns_rnk img {
+    width: 100%;
+    height: auto;
+  }
+  .copyright {
+    font-size: 8px;
+    font-weight: lighter;
   }
 }
