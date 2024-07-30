@@ -53,7 +53,7 @@ footer {
 
 /* トップ */
 .top.scroll_circle {
-  top: 230px;
+  top: 600px;
   left: -130px;
 }
 /* フッター */
@@ -79,6 +79,72 @@ footer {
   top: auto;
   bottom: 17px;
 }
+/*----------------------*/
+
+/*header・home背景テクスチャー乗算
+home_background_overlayが高さのサイズ調整できない*/
+
+.home {
+  position: relative;
+  min-height: 100vh;
+}
+
+.home_parts {
+  position: relative;
+  z-index: 5;
+  box-sizing: border-box;
+}
+.background-overlay {
+  background: url("../images/img/p0040_l.png");
+  opacity: 0.6;
+  background-size: cover;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 6vh;
+  z-index: 4;
+}
+.home_background_overlay {
+  background: url("../images/img/p0040_l.png");
+  opacity: 0.6;
+  background-size: cover;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
+}
+/*----------------------*/
+/*----------------------*/
+/*紙芝居風エリアhomeにconceptがかさなる*/
+
+.block {
+  width: 100%;
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.block_1 {
+  z-index: 100;
+}
+
+.block_2 {
+  width: 50%;
+  z-index: 200;
+  position: absolute;
+  top: 0;
+}
+
 /*----------------------*/
 
 main > section {
@@ -172,12 +238,13 @@ h2 {
 .home_slider_item {
   flex-shrink: 0;
   position: absolute;
-  top: 96px;
-  left: 30%;
+  top: 180px;
+  left: 24%;
   height: auto;
   opacity: 0;
   padding-bottom: 20px;
   display: inline-block;
+  width: 76%;
 }
 
 .home_slider_item.active {
@@ -201,8 +268,27 @@ h2 {
 }
 
 /*おもいエリア*/
+
+/*背景テクスチャー乗算
+homeの上にconceptが重なってしまうので、
+topに数値を入れて調節すればいいのか
+このやり方自体間違っているのか疑問（top:830;を入れている）
+このままほかのエリアも同じように乗算をかけると
+全ての位置を調節していかなければならないのか？疑問*/
 .concept {
   padding-top: 200px;
+  background: url("../images/img/p0040_l.png");
+  opacity: 0.6;
+  background-size: cover;
+  mix-blend-mode: multiply;
+  position: absolute;
+  top: 830px;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 4;
 }
 
 .concept_background {
@@ -211,17 +297,20 @@ h2 {
   margin: 0 auto;
   width: 100%;
   height: 800px;
+  margin-top: 380px;
 }
-
+/*背景テクスチャー乗算すると文字が隠れる*/
 .concept_text {
   max-width: 1000px;
   margin: 0 auto;
+  z-index: 5;
 }
 
 .concept h2 {
   padding-top: 87px;
   white-space: nowrap;
   margin: 5%;
+  z-index: 5;
 }
 
 .concept p {
@@ -435,6 +524,22 @@ h2 {
   gap: 25px;
   flex-direction: row-reverse;
 }
+
+.slidein_left {
+  animation: slideinLeft 2s infinite;
+  animation-iteration-count: 1; /* アニメーションを1回で停止 */
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideinLeft {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 .web_design,
 .glass_art {
   display: flex;
@@ -627,6 +732,7 @@ h2 {
   .concept_background {
     margin-top: 130px;
     height: 700px;
+    margin-top: 280px;
   }
   .concept_text {
     max-width: 800px;
@@ -699,11 +805,11 @@ h2 {
   }
   .home_slider_item {
     position: absolute;
-    top: 480px;
+    top: 430px;
     left: 50%;
     margin: 0 auto;
     transform: translate(-50%, -50%);
-    width: 80%;
+    width: 79%;
     height: auto;
     opacity: 0;
     transition: opacity 1s;
@@ -827,6 +933,53 @@ h2 {
     max-width: 100%;
     width: 100%;
   }
+
+  .scroll_circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  .scrolldown span {
+    position: absolute;
+    right: 32px;
+    bottom: 65px;
+    color: #b2b2b2;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .scrolldown:before {
+    content: "";
+    position: absolute;
+    bottom: 46px;
+    right: 32px;
+    width: 1px;
+    height: 15px;
+    background: #b2b2b2;
+    transform: skewX(31deg);
+  }
+
+  .scrolldown:after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    right: 28px;
+    width: 1px;
+    height: 88px;
+    background: #b2b2b2;
+  }
+  .top.scroll_circle {
+    top: 600px;
+    left: -80px;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -876,10 +1029,10 @@ h2 {
   }
   .home_slider_item {
     position: absolute;
-    top: 480px;
+    top: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 90%;
+    width: 76%;
     height: auto;
     opacity: 0;
     transition: opacity 1s;

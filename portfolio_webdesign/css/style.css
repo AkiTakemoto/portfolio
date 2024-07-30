@@ -50,14 +50,17 @@ main > section {
 }
 
 .dropdown_lists {
-  /*display: none; /*デフォルトでは非表示の状態にしておく*/
   width: 100%;
   position: absolute;
-  top: 60px;
-  left: 16%;
+  top: 30px;
+  right: 0;
   z-index: 1000;
 }
-.works_child_1 {
+
+.dropdown_lists li {
+  visibility: hidden; /*デフォルトでは非表示の状態にしておく、見えない状態にしておく*/
+}
+/*.works_child_1 {
   position: relative;
   top: 3px;
   left: -2%;
@@ -66,13 +69,10 @@ main > section {
   position: relative;
   top: 10px;
   left: 1%;
-}
-.hnavi_list:hover .dropdown_lists {
+}*/
+.hnavi_list:hover .dropdown_lists li {
   display: block; /* ホバー時に表示 */
-}
-
-.header_pc_ul li li a {
-  border-top: 1px solid #eee;
+  visibility: visible; /* 見える */
 }
 
 .header_pc_ul li:hover > ul > li {
@@ -80,7 +80,7 @@ main > section {
   overflow: visible;
 }
 
-.web_design,
+/* .web_design,
 .glass_art:not(:first-child)::before {
   content: "";
   width: 100%;
@@ -98,7 +98,7 @@ main > section {
   color: #5b573e;
   text-decoration: none;
   position: relative;
-}
+} */
 
 .header_pc_nav a::after {
   content: "";

@@ -19,8 +19,11 @@
 
 
 <body>
+
     <div class="container">
+        <div class="background-overlay"></div>
         <header id="header">
+
             <div class="header_wrap">
                 <h1 class="header_logo">Aki Design</h1>
                 <nav class="header_pc_nav">
@@ -52,36 +55,40 @@
         </header>
 
         <main>
+            <div class="home_background_overlay"></div>
             <section class="home" id="home">
-                <ul class="home_parts">
-                    <li>
-                        <h2>かさなるチカラ</h2>
-                    </li>
-                    <li class="home_slider_item">
-                        <picture>
-                            <img src="images/img/shake_hands.jpg" alt="手を合わせる画像">
-                        </picture>
-                    </li>
-                    <li class="home_slider_item">
-                        <picture>
-                            <img src="images/img/hands_2.jpg" alt="手を重ねる画像">
-                        </picture>
-                    </li>
-                    <li class="home_slider_item">
-                        <picture>
-                            <img src="images/img/hands_3.jpg" alt="握手する画像">
-                        </picture>
-                    </li>
-                </ul>
-
+                <div class="block_1">
+                    <ul class="home_parts">
+                        <li>
+                            <h2>かさなるチカラ</h2>
+                        </li>
+                        <li class="home_slider_item">
+                            <picture>
+                                <img src="images/img/hands_1@2x.png" alt="握手する画像">
+                            </picture>
+                        </li>
+                        <li class="home_slider_item">
+                            <picture>
+                                <img src="images/img/hands_2.png" alt="手を合わせる画像">
+                            </picture>
+                        </li>
+                        <li class="home_slider_item">
+                            <picture>
+                                <img src="images/img/hands_3.png" alt="手を重ねる画像">
+                            </picture>
+                        </li>
+                    </ul>
+                </div>
             </section>
+
             <!-- ヘッダーの矢印 -->
             <div class="top scroll_circle">
                 <div class="scrolldown"><span>Scroll</span></div>
             </div>
             <!------------------>
+
             <section class="concept" id="concept">
-                <div>
+                <div class="block_2">
                     <div class="concept_background">
                         <div class="concept_text">
                             <h2>おもい</h2>
@@ -95,8 +102,10 @@
                             </p>
                         </div>
                     </div>
+
                 </div>
             </section>
+
             <section class="contents" id="contents">
                 <img src="images/img/コンテンツ仮-80.jpg" alt="">
 
@@ -182,13 +191,15 @@
                 <div class="works_title">
                     <h2>つくったもの</h2>
                 </div>
-                <div class="container_pc_1">
-                    <div class="web_design">
-                        <img class="web_design_image" id="works_Web_design" src="images/img/works_web.jpg"
-                            alt="ウェブデザイン">
-                        <p class="more_1">more</p>
+                <div class="slidein_left">
+                    <div class="container_pc_1">
+                        <div class="web_design">
+                            <img class="web_design_image" id="works_Web_design" src="images/img/works_web.jpg"
+                                alt="ウェブデザイン">
+                            <p class="more_1">more</p>
+                        </div>
+                        <h3 class="web">Web Design</h3>
                     </div>
-                    <h3 class="web">Web Design</h3>
                 </div>
                 <div class="container_pc_2">
                     <div class="glass_art">
@@ -271,7 +282,9 @@
                 </div>
             </div>
         </footer>
+
     </div>
+
     <script>
         $(function () {
             $('.sp_btn').on('click', function () {
