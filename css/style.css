@@ -114,7 +114,12 @@ footer {
 /*----------------------*/
 /*----------------------*/
 /*紙芝居風エリアhomeにconceptがかさなる*/
-
+.section {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
 /*----------------------*/
 
 main > section {
