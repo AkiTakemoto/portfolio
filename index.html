@@ -28,12 +28,23 @@
                 <h1 class="header_logo">Aki Design</h1>
                 <nav class="header_pc_nav">
                     <ul class="header_pc_ul">
-                        <li><a href="#home">ホーム</a></li>
-                        <li><a href="#concept">コンセプト</a></li>
-                        <li><a href="#contents">コンテンツ</a></li>
-                        <li><a href="#about">私について</a></li>
-                        <li><a href="#works">つくったもの</a></li>
-                        <li><a href="#contact">お問い合わせ</a></li>
+                        <li><a href="../index.html#home">ホーム</a></li>
+                        <li><a href="../index.html#concept">コンセプト</a></li>
+                        <li><a href="../index.html#contents">コンテンツ</a></li>
+                        <li><a href="../index.html#about">私について</a></li>
+                        <li class="hnavi_list">
+                            <a href="../index.html#works">つくったもの</a>
+                            <ul class="dropdown_lists">
+                                <li class="web_design_child">
+                                    <a class="works_child_1" href="../portfolio_webdesign/index.html">Web Design</a>
+                                </li>
+                                <li class="glass_art_child">
+                                    <a class="works_child_2" href="../portfolio_glassart/index.html">Glass Art</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="../index.html#contact">お問い合わせ</a></li>
                     </ul>
                 </nav>
                 <div class="sp_btn">
@@ -42,12 +53,23 @@
                 <nav class="header_sp_nav">
                     <div class="home_sp_circle"><img src="images/img/blue_circle.svg" alt="青い丸">
                         <ul class="header_sp_ul">
-                            <li><a href="#home">ホーム</a></li>
-                            <li><a href="#concept">コンセプト</a></li>
-                            <li><a href="#contents">コンテンツ</a></li>
-                            <li><a href="#about">私について</a></li>
-                            <li><a href="#works">つくったもの</a></li>
-                            <li><a href="#contact">お問い合わせ</a></li>
+                            <li><a href="../index.html#home">ホーム</a></li>
+                            <li><a href="../index.html#concept">コンセプト</a></li>
+                            <li><a href="../index.html#contents">コンテンツ</a></li>
+                            <li><a href="../index.html#about">私について</a></li>
+                            <li class="hnavi_list">
+                                <a href="../index.html#works">つくったもの</a>
+                                <ul class="dropdown_lists">
+                                    <li class="web_design_child">
+                                        <a class="works_child_1" href="../portfolio_webdesign/index.html">Web Design</a>
+                                    </li>
+                                    <li class="glass_art_child">
+                                        <a class="works_child_2" href="../portfolio_glassart/index.html">Glass Art</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li><a href="../index.html#contact">お問い合わせ</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -55,9 +77,9 @@
         </header>
 
         <main>
-            <div class="home_background_overlay"></div>
-            <section class="home" id="home">
-                <div class="block_1">
+            <!----<div class="home_background_overlay"></div>-->
+            <div class="main-content-wrapper">
+                <section class="home" id="home">
                     <ul class="home_parts">
                         <li>
                             <h2>かさなるチカラ</h2>
@@ -78,17 +100,15 @@
                             </picture>
                         </li>
                     </ul>
+                </section>
+
+                <!-- ヘッダーの矢印 -->
+                <div class="top scroll_circle">
+                    <div class="scrolldown"><span>Scroll</span></div>
                 </div>
-            </section>
+                <!------------------>
 
-            <!-- ヘッダーの矢印 -->
-            <div class="top scroll_circle">
-                <div class="scrolldown"><span>Scroll</span></div>
-            </div>
-            <!------------------>
-
-            <section class="concept" id="concept">
-                <div class="block_2">
+                <section class="concept" id="concept">
                     <div class="concept_background">
                         <div class="concept_text">
                             <h2>おもい</h2>
@@ -102,10 +122,8 @@
                             </p>
                         </div>
                     </div>
-
-                </div>
-            </section>
-
+                </section>
+            </div>
             <section class="contents" id="contents">
                 <img src="images/img/コンテンツ仮-80.jpg" alt="">
 
@@ -201,15 +219,16 @@
                         <h3 class="web">Web Design</h3>
                     </div>
                 </div>
-                <div class="container_pc_2">
-                    <div class="glass_art">
-                        <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
-                            alt="グラスアート">
-                        <p class="more_2">more</p>
+                <div class="slidein_right">
+                    <div class="container_pc_2">
+                        <div class="glass_art">
+                            <img class="glass_art_image" id="works_Glass_Art" src="images/img/works_Glassart@2x-80.jpg"
+                                alt="グラスアート">
+                            <p class="more_2">more</p>
+                        </div>
+                        <h3 class="glass">Glass Art</h3>
                     </div>
-                    <h3 class="glass">Glass Art</h3>
                 </div>
-
                 <div class="container_sp_1">
                     <div class="web_design">
                         <h3 class="web">Web Design</h3>
@@ -309,6 +328,40 @@
                 });
             });
             $(function () {
+                const slideInElement = $('.slidein_left');
+
+                function handleScroll() {
+                    const elementTop = slideInElement.offset().top;
+                    const scrollTop = $(window).scrollTop();
+                    const windowHeight = $(window).height();
+
+                    if (scrollTop + windowHeight > elementTop) {
+                        slideInElement.addClass('is-show');
+                    }
+                }
+
+                $(window).on('scroll', handleScroll);
+                handleScroll();  // ページ読み込み時にもチェック
+            });
+
+            $(function () {
+                const slideInElement = $('.slidein_right');
+
+                function handleScroll() {
+                    const elementTop = slideInElement.offset().top;
+                    const scrollTop = $(window).scrollTop();
+                    const windowHeight = $(window).height();
+
+                    if (scrollTop + windowHeight > elementTop) {
+                        slideInElement.addClass('is-show');
+                    }
+                }
+
+                $(window).on('scroll', handleScroll);
+                handleScroll();  // ページ読み込み時にもチェック
+            });
+
+            $(function () {
                 var items = $('.home_slider_item');
                 var index = 0;
 
@@ -326,8 +379,8 @@
             });
         });
 
-
-
+        //紙芝居風
+        $('.main-content-wrapper').stickyStack();
 
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"

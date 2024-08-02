@@ -53,7 +53,7 @@ footer {
 
 /* トップ */
 .top.scroll_circle {
-  top: 600px;
+  top: -150px;
   left: -130px;
 }
 /* フッター */
@@ -81,8 +81,7 @@ footer {
 }
 /*----------------------*/
 
-/*header・home背景テクスチャー乗算
-home_background_overlayが高さのサイズ調整できない*/
+/*背景テクスチャー乗算*/
 
 .home {
   position: relative;
@@ -94,10 +93,13 @@ home_background_overlayが高さのサイズ調整できない*/
   z-index: 5;
   box-sizing: border-box;
 }
+
+.container {
+  position: relative; /*乗算背景基準*/
+}
 .background-overlay {
   background: url("../images/img/p0040_l.png");
-  opacity: 0.6;
-  background-size: cover;
+  opacity: 0.4;
   mix-blend-mode: multiply;
   position: absolute;
   top: 0;
@@ -105,45 +107,13 @@ home_background_overlayが高さのサイズ調整できない*/
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 6vh;
+  height: 100%;
   z-index: 4;
 }
-.home_background_overlay {
-  background: url("../images/img/p0040_l.png");
-  opacity: 0.6;
-  background-size: cover;
-  mix-blend-mode: multiply;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 4;
-}
+
 /*----------------------*/
 /*----------------------*/
 /*紙芝居風エリアhomeにconceptがかさなる*/
-
-.block {
-  width: 100%;
-  height: 100vh;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-}
-
-.block_1 {
-  z-index: 100;
-}
-
-.block_2 {
-  width: 50%;
-  z-index: 200;
-  position: absolute;
-  top: 0;
-}
 
 /*----------------------*/
 
@@ -167,6 +137,7 @@ main > section {
   padding-top: 30px;
   padding-left: 72px;
   white-space: nowrap;
+  z-index: 5;
 }
 .header_pc_ul {
   display: block;
@@ -177,10 +148,13 @@ main > section {
 .header_sp_ul {
   display: none;
 }
+
 .header_pc_nav li {
   padding-left: 30px;
   white-space: nowrap;
   padding-right: 15px;
+  position: relative;
+  z-index: 5;
 }
 
 .header_pc_nav a {
@@ -193,6 +167,34 @@ main > section {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+.dropdown_lists {
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  z-index: 1000;
+}
+
+.dropdown_lists li {
+  visibility: hidden; /*デフォルトでは非表示の状態にしておく、見えない状態にしておく*/
+}
+
+.web_design_child,
+.glass_art_child li {
+  background-color: none;
+}
+
+.hnavi_list:hover .dropdown_lists li {
+  display: block; /* ホバー時に表示 */
+  visibility: visible; /* 見える */
+}
+
+.header_pc_ul li:hover > ul > li {
+  height: 2rem;
+  overflow: visible;
+}
+
 .header_pc_nav a::after {
   content: "";
   position: absolute;
@@ -269,20 +271,11 @@ h2 {
 
 /*おもいエリア*/
 
-/*背景テクスチャー乗算
-homeの上にconceptが重なってしまうので、
-topに数値を入れて調節すればいいのか
-このやり方自体間違っているのか疑問（top:830;を入れている）
-このままほかのエリアも同じように乗算をかけると
-全ての位置を調節していかなければならないのか？疑問*/
 .concept {
-  padding-top: 200px;
-  background: url("../images/img/p0040_l.png");
-  opacity: 0.6;
   background-size: cover;
   mix-blend-mode: multiply;
   position: absolute;
-  top: 830px;
+  top: 500px;
   left: 0;
   margin: 0;
   padding: 0;
@@ -299,11 +292,10 @@ topに数値を入れて調節すればいいのか
   height: 800px;
   margin-top: 380px;
 }
-/*背景テクスチャー乗算すると文字が隠れる*/
+
 .concept_text {
   max-width: 1000px;
   margin: 0 auto;
-  z-index: 5;
 }
 
 .concept h2 {
@@ -320,6 +312,7 @@ topに数値を入れて調節すればいいのか
   padding-top: 96px;
   margin: 5%;
   padding-top: 0px;
+  z-index: 5;
 }
 
 /*コンテンツエリア*/
@@ -328,9 +321,9 @@ topに数値を入れて調節すればいいのか
   display: inline-block;
   max-width: 1366px;
   padding-top: 80px;
-  padding-bottom: 900px;
+  padding-bottom: 680px;
   position: relative;
-  top: 850px;
+  top: 600px;
   left: 15%;
 }
 
@@ -355,6 +348,7 @@ topに数値を入れて調節すればいいのか
   position: relative;
   top: 100px;
   left: 0%;
+  z-index: 5;
 }
 .about ul {
   max-width: 1000px;
@@ -371,12 +365,14 @@ topに数値を入れて調節すればいいのか
   padding-top: 5px;
   height: 410px;
   padding-left: 3%;
+  z-index: 5;
 }
 
 .name_p {
   font-size: 32px;
   padding-bottom: 50px;
   padding-left: 10%;
+  z-index: 5;
 }
 
 .profile_p {
@@ -386,6 +382,7 @@ topに数値を入れて調節すればいいのか
   padding-left: 10%;
   margin-right: 5%;
   height: 500px;
+  z-index: 5;
 }
 
 /*できることエリア*/
@@ -405,8 +402,6 @@ topに数値を入れて調節すればいいのか
   padding-bottom: 30px;
   margin-left: 5%;
 }
-
-/*コーディング*/
 
 .coding,
 .design,
@@ -526,18 +521,25 @@ topに数値を入れて調節すればいいのか
 }
 
 .slidein_left {
-  animation: slideinLeft 2s infinite;
-  animation-iteration-count: 1; /* アニメーションを1回で停止 */
-  animation-fill-mode: forwards;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: 2s;
 }
 
-@keyframes slideinLeft {
-  0% {
-    transform: translateX(-100px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+.slidein_left.is-show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.slidein_right {
+  opacity: 0;
+  transform: translateX(50%);
+  transition: 2s;
+}
+
+.slidein_right.is-show {
+  transform: translateX(0);
+  opacity: 1;
 }
 
 .web_design,
@@ -725,7 +727,7 @@ topに数値を入れて調節すればいいのか
 
   .concept {
     max-width: 1100px;
-    padding-top: 300px;
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
   }
@@ -737,7 +739,19 @@ topに数値を入れて調節すればいいのか
   .concept_text {
     max-width: 800px;
   }
+  .concept h2 {
+    font-size: 35px;
+  }
 
+  .consept p {
+    font-size: 15px;
+  }
+  .contents {
+    max-width: 1100px;
+    padding-bottom: 580px;
+    top: 500px;
+    left: -10%;
+  }
   .about {
     max-width: 1100px;
     width: 100%;
@@ -806,7 +820,7 @@ topに数値を入れて調節すればいいのか
   .home_slider_item {
     position: absolute;
     top: 430px;
-    left: 50%;
+    left: 58%;
     margin: 0 auto;
     transform: translate(-50%, -50%);
     width: 79%;
@@ -889,7 +903,7 @@ topに数値を入れて調節すればいいのか
     width: 100%;
     height: 100vh;
     background: #8b8c8c;
-    z-index: 4;
+    z-index: 6;
   }
   .header_sp_nav.active {
     display: flex;
@@ -911,6 +925,37 @@ topに数値を入れて調節すればいいのか
     font-weight: lighter;
     font-size: 14px;
     position: relative;
+  }
+  .dropdown_lists {
+    width: 100%;
+    position: absolute;
+    top: 29px;
+    left: 110%;
+    white-space: nowrap;
+    z-index: 1000;
+  }
+
+  .dropdown_lists li {
+    visibility: hidden; /*デフォルトでは非表示の状態にしておく、見えない状態にしておく*/
+    font-size: 11px;
+  }
+  .web_design_child {
+    top: -3px;
+    right: -5px;
+  }
+
+  .glass_art_child {
+    top: -26px;
+  }
+
+  .hnavi_list:hover .dropdown_lists li {
+    display: block; /* ホバー時に表示 */
+    visibility: visible; /* 見える */
+  }
+
+  .header_pc_ul li:hover > ul > li {
+    height: 2rem;
+    overflow: visible;
   }
 
   .header_sp_nav a::after {
@@ -940,7 +985,7 @@ topに数値を入れて調節すればいいのか
     border-radius: 50%;
 
     position: relative;
-    z-index: 2;
+    z-index: 4;
   }
 
   .scrolldown span {
@@ -977,7 +1022,7 @@ topに数値を入れて調節すればいいのか
     background: #b2b2b2;
   }
   .top.scroll_circle {
-    top: 600px;
+    top: -250px;
     left: -80px;
   }
 }
@@ -1049,9 +1094,10 @@ topに数値を入れて調節すればいいのか
   /*コンセプトエリア*/
   .concept {
     max-width: 767px;
-    padding-top: 400px;
+    padding-top: 0px;
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
   .concept_background {
     margin-top: 130px;
@@ -1069,17 +1115,24 @@ topに数値を入れて調節すればいいのか
   .concept p {
     font-size: 14px;
     line-height: 3.4;
-    padding-top: 60px;
+    padding-top: 30px;
   }
 
   /*----------------------*/
   /*コンテンツエリア*/
 
   .contents img {
-    max-width: 375px;
+    max-width: 767px;
     width: 100%;
   }
-
+  .contents {
+    max-width: 767px;
+    padding-top: 80px;
+    padding-bottom: 380px;
+    position: relative;
+    top: 300px;
+    left: 0%;
+  }
   /*----------------------*/
   /*私についてのエリア*/
 
@@ -1427,7 +1480,7 @@ topに数値を入れて調節すればいいのか
   }
   /* トップ */
   .top.scroll_circle {
-    top: 540px;
+    top: -335px;
     left: 50%;
   }
   /* フッター */
