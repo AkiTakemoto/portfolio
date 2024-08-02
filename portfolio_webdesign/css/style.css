@@ -147,8 +147,16 @@ main {
   box-sizing: border-box;
 }
 
+.item img {
+  width: 100%;
+  box-sizing: border-box; /* 追加 */
+}
+
 .SP_mock_img {
-  padding-left: 100px;
+  max-width: 150px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  margin-left: 25%;
 }
 
 .line_left {

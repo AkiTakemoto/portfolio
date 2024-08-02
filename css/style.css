@@ -237,9 +237,9 @@ h2 {
   flex-wrap: nowrap;
   padding-bottom: 70px;
   position: relative; /* スライダーアイテムの配置を相対的にするため */
+  margin-top: 190px;
 }
 .home h2 {
-  padding-top: 190px;
   white-space: nowrap;
 }
 .home_slider_item {

@@ -77,50 +77,52 @@
                 <button type="submit">ホームへ戻る</button>
             </div>
         </main>
-</body>
-<footer>
-    <div class="footer_era">
-        <div class="footer">
-            <nav class="footer_nav">
-                <ul class="footer_a">
-                    <li><a href="../index.html#home">ホーム</a></li>
-                    <li><a href="../index.html#concept">コンセプト</a></li>
-                    <li><a href="../index.html#contents">コンテンツ</a></li>
-                    <li><a href="../index.html#about">私について</a></li>
-                    <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
+
+        <footer>
+            <div class="footer_era">
+                <div class="footer">
+                    <nav class="footer_nav">
+                        <ul class="footer_a">
+                            <li><a href="../index.html#home">ホーム</a></li>
+                            <li><a href="../index.html#concept">コンセプト</a></li>
+                            <li><a href="../index.html#contents">コンテンツ</a></li>
+                            <li><a href="../index.html#about">私について</a></li>
+                            <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
 
 
-                    <li><a href="../index.html#contact">お問い合わせ</a></li>
-                </ul>
-            </nav>
-            <ul class="sns_rnk">
-                <li class="instagram_icon">
-                    <img src="images/Instagram_icon.svg" alt="Instagram">
-                </li>
-                <li class="x_icon">
-                    <img src="images/X_icon.svg" alt="X">
-                </li>
-            </ul>
-            <ul class="copyright">
-                <p>©️ Aki design All Right Reserved</p>
-            </ul>
-        </div>
+                            <li><a href="../index.html#contact">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="sns_rnk">
+                        <li class="instagram_icon">
+                            <img src="images/Instagram_icon.svg" alt="Instagram">
+                        </li>
+                        <li class="x_icon">
+                            <img src="images/X_icon.svg" alt="X">
+                        </li>
+                    </ul>
+                    <ul class="copyright">
+                        <p>©️ Aki design All Right Reserved</p>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </div>
-</footer>
-</div>
-<script>
-    $(function () {
-        $('.sp_btn').on('click', function () {
-            $('.sp_btn').toggleClass('open');
-            $('.header_sp_nav').fadeToggle();
+
+    <script>
+        $(function () {
+            $('.sp_btn').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.header_sp_nav').fadeToggle();
+            });
+            $('.header_sp_nav a').on('click', function () {
+                $('.header_sp_nav').fadeOut();
+                $('.sp_btn').removeClass('open');
+            });
         });
-        $('.header_sp_nav a').on('click', function () {
-            $('.header_sp_nav').fadeOut();
-            $('.sp_btn').removeClass('open');
-        });
-    });
 
 
-</script>
+    </script>
+</body>
 
 </html>
