@@ -1283,6 +1283,17 @@ h2 {
 
 @media screen and (max-width: 767px) {
   /*全体*/
+  .home_parts,
+  .header_pc_nav,
+  .about,
+  .works,
+  .contact_contents {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+  }
+
   picture {
     max-width: 767px;
     width: 100%;
