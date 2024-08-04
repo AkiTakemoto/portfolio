@@ -251,6 +251,7 @@ h2 {
   position: relative; /* スライダーアイテムの配置を相対的にするため */
 }
 .home h2 {
+  max-width: 1000px;
   padding-top: 190px;
   white-space: nowrap;
 }
@@ -286,20 +287,15 @@ h2 {
   }
 }
 
-/*--- 紙芝居 --- */
+/*--- 紙芝居 ---*/
 .stack-content.stuck {
   position: absolute;
   left: 50%;
-  margin-left: -50%; /* translateXの代わりに使用 */
-  max-width: 100%;
-}
-.home {
-  overflow-x: hidden; /* 横スクロールを無効にする */
+  transform: translateX(-50%);
 }
 
 .home_text {
   transition: all 0.3s;
-  z-index: 6;
 }
 
 .home_parts {
@@ -1061,19 +1057,10 @@ h2 {
     padding-bottom: 0px;
   }
 
-  @media (max-width: 767px) {
-    .home_slider_item,
-    .home_text {
-      display: none;
-    }
-  }
-  .hidden {
-    display: none;
-  }
   .home_slider_item {
     position: absolute;
-    top: 430px;
-    left: 58%;
+    top: 400px;
+    right: -70%;
     margin: 0 auto;
     transform: translate(-50%, -50%);
     width: 79%;
@@ -1088,6 +1075,9 @@ h2 {
   .home_slider_item img {
     max-width: 100%; /* 画像の幅を親要素に合わせる */
     height: auto; /* アスペクト比を維持 */
+  }
+
+  @media (max-width: 767px) {
   }
 
   .home_sp_circle {
@@ -1128,6 +1118,7 @@ h2 {
     background: #5b573e;
     position: absolute;
     transition: 0.3s;
+    z-index: 1000;
   }
   .sp_btn span::before {
     bottom: 12px;
@@ -1138,8 +1129,8 @@ h2 {
 
   /*ばつ印*/
   .sp_btn.open span {
-    background: transparent !important;
-    z-index: 10;
+    background: transparent;
+    z-index: 1000;
   }
   .sp_btn.open span::before {
     bottom: 0;
@@ -1157,7 +1148,7 @@ h2 {
     width: 100%;
     height: 100vh;
     background: #8b8c8c;
-    z-index: 12;
+    z-index: 1000;
   }
   .header_sp_nav.active {
     display: flex;
@@ -1282,18 +1273,6 @@ h2 {
 }
 
 @media screen and (max-width: 767px) {
-  /*全体*/
-  .home_parts,
-  .header_pc_nav,
-  .about,
-  .works,
-  .contact_contents {
-    max-width: 100%;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
-  }
-
   picture {
     max-width: 767px;
     width: 100%;
@@ -1339,14 +1318,15 @@ h2 {
   }
   .home_slider_item {
     position: absolute;
-    top: 350px;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 150px;
+    left: 10%;
+    transform: translateX(-50%);
     width: 76%;
     height: auto;
     opacity: 0;
     transition: opacity 1s;
     margin-bottom: 0;
+    z-index: 100;
   }
   .home_slider_item.active {
     opacity: 1; /* アクティブなスライドを表示 */

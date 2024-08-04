@@ -337,7 +337,7 @@
         $(function () {
             //紙芝居風
             $('.main-content-wrapper').stickyStack({
-                // stack_contentクラスを付けた最初のセクションのみ、紙芝居風の動きをさせる
+                //stack_contentクラスを付けた最初のセクションのみ、紙芝居風の動きをさせる
                 stackingElement: '.stack-content',
             });
             $(window).scroll(function () {
@@ -345,7 +345,7 @@
                 $scroll = $(window).scrollTop() + 250
                 $content_img = $('.contents').offset().top
 
-                // 「かさなるチカラ」が「おもい」の黄色の背景と重なったら隠す
+                //「かさなるチカラ」が「おもい」の黄色の背景と重なったら隠す
                 if ($scroll > $concept) {
                     $('.home_text').css({
                         opacity: '0'
@@ -355,7 +355,7 @@
                         opacity: '1'
                     });
                 }
-                // 手のイラストが「おもい」の黄色の背景を超えたら隠す
+                //手のイラストが「おもい」の黄色の背景を超えたら隠す
                 if ($scroll > $content_img) {
                     $('.home_parts').css({
                         opacity: '0'
