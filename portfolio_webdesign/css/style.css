@@ -286,6 +286,7 @@ h4 {
   margin: 0 auto;
   padding: 20px;
   white-space: nowrap;
+  z-index: 5;
 }
 .footer_a li {
   margin: 0 10px;
