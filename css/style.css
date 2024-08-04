@@ -1318,7 +1318,7 @@ h2 {
   }
   .home_slider_item {
     position: absolute;
-    top: 150px;
+    top: 200px;
     left: 10%;
     transform: translateX(-50%);
     width: 76%;
@@ -1401,7 +1401,7 @@ h2 {
     text-align: center;
   }
   .about ul {
-    width: 100%;
+    width: 90%;
     flex-direction: column;
     padding-bottom: 180px;
     align-items: center;
@@ -1434,7 +1434,7 @@ h2 {
   .about_skill_slider {
     margin: 5% auto;
     max-width: 420px;
-    width: 100%;
+    width: 85%;
   }
   .about_slider_sub {
     font-size: 16px;
@@ -1455,20 +1455,20 @@ h2 {
   .design_icon,
   .writing_icon,
   .others_icon {
-    height: 50%;
-    top: 11%;
+    height: 40%;
+    top: 20%;
     left: 56%;
   }
 
   .writing_icon {
-    height: 53%;
-    top: 13%;
+    height: 45%;
+    top: 20%;
     left: 58%;
   }
 
   .others_icon {
-    height: 67%;
-    top: 5%;
+    height: 57%;
+    top: 15%;
     left: 59%;
   }
   .coding_label,
@@ -1476,7 +1476,7 @@ h2 {
   .writing_label,
   .others_label {
     font-size: 15px;
-    padding-top: 20px;
+    padding-top: 1px;
     margin: 0;
   }
 
@@ -1484,7 +1484,7 @@ h2 {
   .design_skill,
   .writing_skill,
   .others_skill {
-    font-size: 13px;
+    font-size: 12px;
   }
 
   /*----------------------*/
@@ -1501,6 +1501,7 @@ h2 {
   .link-wrapper {
     display: block; /* リンクとして全体を包む */
     width: 100%;
+    padding-left: 0%;
     position: relative; /* これにより、リンク内の要素が相対的に配置される */
     pointer-events: auto; /* リンクとしての機能を有効にする */
   }
@@ -1770,7 +1771,7 @@ h2 {
   }
   /* トップ */
   .top.scroll_circle {
-    top: -335px;
+    top: -248px;
     left: 50%;
   }
   /* フッター */
