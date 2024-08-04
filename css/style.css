@@ -278,7 +278,11 @@ h2 {
 .stack-content.stuck {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -50%; /* translateXの代わりに使用 */
+  max-width: 100%;
+}
+.home {
+  overflow-x: hidden; /* 横スクロールを無効にする */
 }
 
 .home_text {
