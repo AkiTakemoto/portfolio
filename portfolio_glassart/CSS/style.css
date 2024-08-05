@@ -37,7 +37,7 @@ main > section {
   padding-top: 30px;
   padding-left: 72px;
   white-space: nowrap;
-  z-index: 5;
+  z-index: 3;
 }
 .header_pc_ul {
   display: block;
@@ -474,8 +474,6 @@ h4 {
   .header_wrap {
     max-width: 767px;
     width: 100%;
-    padding-left: 22px;
-    margin: 0 auto;
   }
   .header_logo {
     font-family: "Hubballi";

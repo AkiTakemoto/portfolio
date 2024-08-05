@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.loader {
+  background-color: #c7d4d8;
+}
+.loader .txt {
+  font-family: "Hubballi";
+  font-size: 40px;
+  font-weight: normal;
+  color: #5b573e;
+
+  white-space: nowrap;
+  z-index: 500;
+}

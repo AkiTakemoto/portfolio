@@ -45,10 +45,10 @@ footer {
 .scrolldown:before {
   content: "";
   position: absolute;
-  bottom: 70px;
+  bottom: 78px;
   right: 66px;
   width: 1px;
-  height: 30px;
+  height: 19px;
   background: #b2b2b2;
   transform: skewX(31deg);
 }
@@ -56,40 +56,45 @@ footer {
 .scrolldown:after {
   content: "";
   position: absolute;
-  top: 20px;
-  right: 57px;
+  top: 18px;
+  right: 60px;
   width: 1px;
-  height: 160px;
+  height: 155px;
   background: #b2b2b2;
 }
 
 /* トップ */
 .top.scroll_circle {
   top: -150px;
-  left: -130px;
+  left: -110px;
 }
 /* フッター */
 .bottom.scroll_circle {
-  top: -250px;
-  right: -130px;
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 6250px;
+  right: -85px;
   margin-left: auto;
+  z-index: 5;
 }
 .bottom .scrolldown span {
   right: auto;
-  left: 62px;
-  bottom: 40px;
+  left: 43px;
+  bottom: 25px;
   transform: rotate(0deg);
 }
 .bottom .scrolldown:before {
   right: auto;
-  left: 69.5px;
-  bottom: 146px;
+  left: 46px;
+  bottom: 121px;
 }
 .bottom .scrolldown:after {
   right: auto;
-  left: 60px;
+  left: 40px;
   top: auto;
-  bottom: 17px;
+  bottom: 20px;
+  height: 120px;
 }
 /*----------------------*/
 
@@ -323,7 +328,7 @@ h2 {
   position: absolute;
   margin: 0 auto;
   width: 100%;
-  height: 800px;
+  height: 880px;
   margin-top: 380px;
 }
 
@@ -353,22 +358,122 @@ h2 {
 
 .contents {
   display: inline-block;
-  width: 100%; /* 横幅を100%に */
-  margin-top: 80px; /* paddingをmarginに */
-  margin-bottom: 680px; /* paddingをmarginに */
+  width: 100%; /* 横幅を100%に*/
+  margin-top: 80px; /* paddingをmarginに*/
+  margin-bottom: 300px; /* paddingをmarginに*/
   position: relative;
-  top: 600px;
-  text-align: center; /* 画像を左右中央に */
+  top: 500px;
+  text-align: center; /* 画像を左右中央に*/
   background: #fff; /* 白背景をつけて、手のイラストが隠れるように */
+}
+.fuwafuwa_1 {
+  width: 480px; /* 画像の幅を設定 */
+  height: 480px; /* 画像の高さを設定 */
+  background: url(../images/img/contents1.png) no-repeat center center / contain;
+  display: block;
+  margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+  animation: fuwafuwa1 3s ease-in-out infinite alternate;
+  transition: 1.5s ease-in-out;
+  position: absolute;
+  top: 0px;
+  left: 15%;
+  z-index: 2; /* z-indexの値を修正 */
+}
+.fuwafuwa_2 {
+  width: 600px; /* 画像の幅を設定 */
+  height: 600px; /* 画像の高さを設定 */
+  background: url(../images/img/contents2.png) no-repeat center center / contain;
+  display: block;
+  margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+  animation: fuwafuwa2 3s ease-in-out infinite alternate;
+  transition: 1.5s ease-in-out;
+  position: relative;
+  top: 130px;
+  left: 27%;
+  z-index: 2; /* z-indexの値を修正 */
+}
+.fuwafuwa_3 {
+  width: 800px; /* 画像の幅を設定 */
+  height: 800px; /* 画像の高さを設定 */
+  background: url(../images/img/contents3.png) no-repeat center center / contain;
+  display: block;
+  margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+  animation: fuwafuwa3 3s ease-in-out infinite alternate;
+  transition: 1.5s ease-in-out;
+  position: relative;
+  top: -150px;
+  right: 5%;
+  z-index: 2; /* z-indexの値を修正 */
+}
+.fuwafuwa_4 {
+  width: 800px; /* 画像の幅を設定 */
+  height: 800px; /* 画像の高さを設定 */
+  background: url(../images/img/contents4.png) no-repeat center center / contain;
+  display: block;
+  margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+  animation: fuwafuwa4 3s ease-in-out infinite alternate;
+  transition: 1.5s ease-in-out;
+  position: relative;
+  top: -500px;
+  left: 15%;
+  z-index: 2; /* z-indexの値を修正 */
+}
+
+@keyframes fuwafuwa1 {
+  0% {
+    transform: translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform: translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(7deg);
+  }
+}
+@keyframes fuwafuwa2 {
+  0% {
+    transform: translate(0, 0) rotate(7deg);
+  }
+  50% {
+    transform: translate(0, 7px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-7deg);
+  }
+}
+@keyframes fuwafuwa3 {
+  0% {
+    transform: translate(0, 0) rotate(-10deg);
+  }
+  50% {
+    transform: translate(0, -10px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(10deg);
+  }
+}
+@keyframes fuwafuwa4 {
+  0% {
+    transform: translate(0, 0) rotate(10deg);
+  }
+  50% {
+    transform: translate(0, 10px) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-10deg);
+  }
 }
 
 /*私についてのエリア*/
 
 .about {
+  margin-top: -10px;
   width: 100%;
   background-image: url("../images/img/wave_gr_1.png");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+  top: -400px;
 }
 
 .about_contents {
@@ -616,7 +721,7 @@ h2 {
   right: 10px;
   bottom: 10px;
 }
-/*矢印？
+/*矢印*/
 .more_1 a::before {
   content: "";
   display: block;
@@ -629,7 +734,6 @@ h2 {
   right: 10px;
   bottom: 10px;
 }
-*/
 .more_2 {
   font-size: 18px;
   position: absolute; /* 白背景内で右下に配置 */
@@ -674,7 +778,6 @@ h2 {
   padding-top: 8%;
   padding-right: 0%;
   width: 76%;
-  z-index: 5;
 }
 .contact_parts {
   padding-top: 100px;
@@ -701,7 +804,8 @@ h2 {
 
 /*フッターエリア*/
 .footer_era {
-  padding-top: 250px;
+  margin-top: 130px;
+  padding-top: 260px;
   background-image: url("../images/img/wave_main.png");
   background-repeat: no-repeat;
   background-size: cover;
@@ -829,9 +933,74 @@ h2 {
   }
   .contents {
     max-width: 1100px;
-    padding-bottom: 580px;
-    top: 500px;
-    left: -10%;
+    padding-bottom: 200px;
+  }
+
+  .contents {
+    display: inline-block;
+    width: 100%; /* 横幅を100%に*/
+    margin-top: 80px; /* paddingをmarginに*/
+    margin-bottom: 300px; /* paddingをmarginに*/
+    position: relative;
+    top: 100px;
+    text-align: center; /* 画像を左右中央に*/
+    background: #fff; /* 白背景をつけて、手のイラストが隠れるように */
+  }
+  .fuwafuwa_1 {
+    width: 480px; /* 画像の幅を設定 */
+    height: 480px; /* 画像の高さを設定 */
+    background: url(../images/img/contents1.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa1 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+    position: absolute;
+    top: 0px;
+    left: 15%;
+    z-index: 2; /* z-indexの値を修正 */
+  }
+  .fuwafuwa_2 {
+    width: 500px; /* 画像の幅を設定 */
+    height: 500px; /* 画像の高さを設定 */
+    background: url(../images/img/contents2.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa2 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+    position: relative;
+    top: 300px;
+    left: 27%;
+    z-index: 2; /* z-indexの値を修正 */
+  }
+  .fuwafuwa_3 {
+    width: 500px; /* 画像の幅を設定 */
+    height: 500px; /* 画像の高さを設定 */
+    background: url(../images/img/contents3.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa3 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+    position: relative;
+    top: 0px;
+    right: 15%;
+    z-index: 2; /* z-indexの値を修正 */
+  }
+  .fuwafuwa_4 {
+    width: 500px; /* 画像の幅を設定 */
+    height: 500px; /* 画像の高さを設定 */
+    background: url(../images/img/contents4.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 15px auto; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa4 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+    position: relative;
+    top: -200px;
+    left: 15%;
+    z-index: 2; /* z-indexの値を修正 */
   }
   .about {
     max-width: 1100px;
@@ -840,6 +1009,7 @@ h2 {
     background-image: url("../images/img/wave_sp_gr@2x.png");
     background-repeat: no-repeat;
     background-size: cover;
+    top: 0px;
   }
 
   .about_contents {
@@ -1077,7 +1247,33 @@ h2 {
     height: auto; /* アスペクト比を維持 */
   }
 
-  @media (max-width: 767px) {
+  /* フッター */
+
+  .bottom.scroll_circle {
+    width: 120px;
+    height: 120px;
+    top: 6400px;
+    right: -50px;
+    margin-left: auto;
+    z-index: 5;
+  }
+  .bottom .scrolldown span {
+    right: auto;
+    left: 36px;
+    bottom: 20px;
+    transform: rotate(0deg);
+  }
+  .bottom .scrolldown:before {
+    right: auto;
+    left: 35px;
+    bottom: 73px;
+  }
+  .bottom .scrolldown:after {
+    right: auto;
+    left: 30px;
+    top: auto;
+    bottom: 8px;
+    height: 80px;
   }
 
   .home_sp_circle {
@@ -1290,8 +1486,6 @@ h2 {
     max-width: 767px;
     width: 100%;
     box-sizing: border-box;
-    padding-left: 22px;
-    margin: 0 auto;
   }
   .header_logo {
     font-family: "Hubballi";
@@ -1337,9 +1531,10 @@ h2 {
   }
 
   /*コンセプトエリア*/
+
   .concept {
     max-width: 767px;
-    padding-top: 0px;
+    padding-top: 10px;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -1366,17 +1561,66 @@ h2 {
   /*----------------------*/
   /*コンテンツエリア*/
 
-  .contents img {
-    max-width: 767px;
-    width: 100%;
-  }
   .contents {
-    max-width: 767px;
-    padding-top: 80px;
-    padding-bottom: 380px;
+    display: inline-block;
+    width: 100%; /* 横幅を100%に*/
+    margin-top: 280px; /* paddingをmarginに*/
+    margin-bottom: 50px; /* paddingをmarginに*/
     position: relative;
-    top: 300px;
+    top: 0px;
+    text-align: center; /* 画像を左右中央に*/
+    background: #fff; /* 白背景をつけて、手のイラストが隠れるように */
+  }
+
+  .fuwafuwa_1 {
+    width: 80%;
+    left: 10%;
+    background: url(../images/img/contents1.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 0px; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa1 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+
+    z-index: 2; /* z-indexの値を修正 */
+  }
+  .fuwafuwa_2 {
+    width: 80%;
     left: 0%;
+    background: url(../images/img/contents2.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 0; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa2 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+
+    z-index: 2; /* z-indexの値を修正 */
+  }
+  .fuwafuwa_3 {
+    width: 80%;
+    left: 0%;
+    top: 100px;
+    background: url(../images/img/contents3.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 0; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa3 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+
+    z-index: 2; /* z-indexの値を修正 */
+  }
+  .fuwafuwa_4 {
+    width: 70%;
+    right: 50%;
+    top: -60px;
+    background: url(../images/img/contents4.png) no-repeat center center /
+      contain;
+    display: block;
+    margin: 0; /* 上に余白を設定し、中央に配置 */
+    animation: fuwafuwa4 3s ease-in-out infinite alternate;
+    transition: 1.5s ease-in-out;
+
+    z-index: 2; /* z-indexの値を修正 */
   }
   /*----------------------*/
   /*私についてのエリア*/
@@ -1388,6 +1632,7 @@ h2 {
     background-image: url("../images/img/wave_sp_gr@2x.png");
     background-repeat: no-repeat;
     background-size: cover;
+    top: -300px;
   }
   .about_contents {
     max-width: 375px;
@@ -1599,6 +1844,7 @@ h2 {
     justify-content: center;
     align-items: center;
     max-width: 100%;
+    overflow-y: hidden;
   }
   .contact_contents {
     flex-direction: column;
@@ -1606,9 +1852,10 @@ h2 {
     max-width: 767px;
     width: 100%;
     height: 600px;
+    overflow-y: hidden;
   }
   .circle {
-    min-height: 600px;
+    min-height: 500px;
     border-top-right-radius: 1500px 800px;
     border-top-left-radius: 1500px 800px;
     margin-left: -100px;
@@ -1730,71 +1977,58 @@ h2 {
     margin-top: -150px;
     padding-top: 150px;
   }
+
   .scroll_circle {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     border: 1px solid #cfcfcf;
     position: relative;
+    top: 5000px;
     z-index: 2;
   }
+
+  /* トップ */
+  .top.scroll_circle {
+    top: -320px;
+    left: 50%;
+  }
+  /* フッター */
+  .footer_era {
+    margin-top: 0px;
+  }
+
   .scrolldown span {
     position: absolute;
-    right: 35px;
-    bottom: 19px;
-    color: #cfcfcf;
-    font-size: 9px;
+    right: 34px;
+    bottom: 18px;
+    color: #b2b2b2;
+    font-size: 10px;
     letter-spacing: 0.05em;
     -ms-writing-mode: tb-rl;
     -webkit-writing-mode: vertical-rl;
     writing-mode: vertical-rl;
     transform: rotate(270deg);
   }
+
   .scrolldown:before {
     content: "";
     position: absolute;
-    bottom: 18px;
-    right: 22px;
+    bottom: 15px;
+    right: 23px;
     width: 1px;
-    height: 8px;
-    background: #cfcfcf;
+    height: 10px;
+    background: #b2b2b2;
     transform: skewX(31deg);
   }
+
   .scrolldown:after {
     content: "";
     position: absolute;
     top: 1px;
     right: 20px;
     width: 1px;
-    height: 41px;
-    background: #cfcfcf;
-  }
-  /* トップ */
-  .top.scroll_circle {
-    top: -248px;
-    left: 50%;
-  }
-  /* フッター */
-  .bottom.scroll_circle {
-    top: -250px;
-    right: -130px;
-    margin-left: auto;
-  }
-  .bottom .scrolldown span {
-    right: auto;
-    left: 62px;
-    bottom: 40px;
-    transform: rotate(0deg);
-  }
-  .bottom .scrolldown:before {
-    right: auto;
-    left: 69.5px;
-    bottom: 146px;
-  }
-  .bottom .scrolldown:after {
-    right: auto;
-    left: 60px;
-    top: auto;
-    bottom: 17px;
+    height: 45px;
+    background: #b2b2b2;
   }
 }

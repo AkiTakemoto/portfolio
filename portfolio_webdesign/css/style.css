@@ -4,6 +4,7 @@ main > section {
   max-width: 100%;
   margin: 0 auto;
 }
+
 /*背景テクスチャー乗算*/
 .container {
   position: relative; /*乗算背景基準*/
@@ -37,7 +38,7 @@ main > section {
   padding-top: 30px;
   padding-left: 72px;
   white-space: nowrap;
-  z-index: 5;
+  z-index: 3;
 }
 .header_pc_ul {
   display: block;
@@ -357,6 +358,32 @@ h4 {
     padding-left: 22px;
     white-space: nowrap;
   }
+  .bottom.scroll_circle {
+    width: 120px;
+    height: 120px;
+    top: 6400px;
+    right: -50px;
+    margin-left: auto;
+    z-index: 5;
+  }
+  .bottom .scrolldown span {
+    right: auto;
+    left: 36px;
+    bottom: 20px;
+    transform: rotate(0deg);
+  }
+  .bottom .scrolldown:before {
+    right: auto;
+    left: 35px;
+    bottom: 73px;
+  }
+  .bottom .scrolldown:after {
+    right: auto;
+    left: 30px;
+    top: auto;
+    bottom: 8px;
+    height: 80px;
+  }
 
   /*ハンバーガーメニューエリア*/
   .sp_btn {
@@ -552,8 +579,6 @@ h4 {
   .header_wrap {
     max-width: 767px;
     width: 100%;
-    padding-left: 22px;
-    margin: 0 auto;
   }
   .header_logo {
     font-family: "Hubballi";
