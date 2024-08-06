@@ -179,9 +179,11 @@ main {
   margin: 0 auto;
   padding: 20px;
   white-space: nowrap;
+  z-index: 5;
 }
 .footer_a li {
   margin: 0 10px;
+  z-index: 5;
 }
 .footer_nav a {
   position: relative;
@@ -210,6 +212,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-top: 40px;
+  z-index: 5;
 }
 .instagram_icon,
 .x_icon {
@@ -217,10 +221,12 @@ main {
   margin: 41px 10px 42px;
   display: flex;
   align-items: center;
+  z-index: 5;
 }
 .sns_rnk img {
   width: 100%;
   height: auto;
+  z-index: 5;
 }
 .copyright {
   font-size: 11px;

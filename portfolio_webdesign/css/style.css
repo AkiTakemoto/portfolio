@@ -291,6 +291,7 @@ h4 {
 }
 .footer_a li {
   margin: 0 10px;
+  z-index: 5;
 }
 
 .footer_nav a {
@@ -320,6 +321,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 .instagram_icon,
 .x_icon {
@@ -327,10 +329,12 @@ h4 {
   margin: 41px 10px 42px;
   display: flex;
   align-items: center;
+  z-index: 5;
 }
 .sns_rnk img {
   width: 100%;
   height: auto;
+  z-index: 5;
 }
 .copyright {
   font-size: 11px;
