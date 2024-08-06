@@ -1789,6 +1789,7 @@ h2 {
     flex-direction: column;
     gap: 25px;
     margin-bottom: 100px;
+    z-index: 5;
   }
 
   .web_design,
@@ -1804,16 +1805,16 @@ h2 {
     position: relative; /* moreの基準とする */
   }
   .web_design_image {
-    padding-top: 33px;
     align-items: center;
     max-width: 350px;
     width: 100%;
+    z-index: 5;
   }
   .glass_art_image {
-    padding-top: 29px;
     align-items: center;
     max-width: 350px;
     width: 100%;
+    z-index: 5;
   }
   .more_1 {
     font-size: 13px;
@@ -2020,10 +2021,9 @@ h2 {
   .scrolldown:before {
     content: "";
     position: absolute;
-    bottom: 15px;
-    right: 23px;
+    top: 33px;
     width: 1px;
-    height: 10px;
+    height: 15px;
     background: #b2b2b2;
     transform: skewX(31deg);
   }
