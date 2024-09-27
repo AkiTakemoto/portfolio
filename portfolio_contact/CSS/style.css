@@ -85,7 +85,7 @@ main > section {
 
 .hnavi_list:hover .dropdown_lists li {
   display: block; /* ホバー時に表示 */
-  visibility: visible; /* 見える */
+  visibility: visible; /*  見える */
 }
 
 .header_pc_ul li:hover > ul > li {
