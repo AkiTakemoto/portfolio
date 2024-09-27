@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サンクスページ</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="background-overlay"></div>
+        <header id="header">
+            <div class="header_wrap">
+                <h1 class="header_logo">Aki Design</h1>
+                <nav class="header_pc_nav">
+                    <ul class="header_pc_ul">
+                        <li><a href="../index.html#home">ホーム</a></li>
+                        <li><a href="../index.html#concept">コンセプト</a></li>
+                        <li><a href="../index.html#contents">コンテンツ</a></li>
+                        <li><a href="../index.html#about">私について</a></li>
+                        <li class="hnavi_list">
+                            <a href="../index.html#works">つくったもの</a>
+                            <ul class="dropdown_lists">
+                                <li class="web_design">
+                                    <a class="works_child_1" href="../portfolio_webdesign/index.html">Web Design</a>
+                                </li>
+                                <li class="glass_art">
+                                    <a class="works_child_2" href="../portfolio_glassart/index.html">Glass Art</a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><a href="../index.html#contact">お問い合わせ</a></li>
+                    </ul>
+                </nav>
+                <div class="sp_btn">
+                    <span></span>
+                </div>
+                <nav class="header_sp_nav">
+                    <div class="home_sp_circle"><img src="images/blue_circle.svg" alt="青い丸">
+                        <ul class="header_sp_ul">
+                            <li><a href="../index.html#home">ホーム</a></li>
+                            <li><a href="../index.html#concept">コンセプト</a></li>
+                            <li><a href="../index.html#contents">コンテンツ</a></li>
+                            <li><a href="../index.html#about">私について</a></li>
+                            <li class="hnavi_list">
+                                <a href="../index.html#works">つくったもの</a>
+                                <ul class="dropdown_lists">
+                                    <li class="web_design_child">
+                                        <a class="works_child_1" href="../portfolio_webdesign/index.html">Web Design</a>
+                                    </li>
+                                    <li class="glass_art_child">
+                                        <a class="works_child_2" href="../portfolio_glassart/index.html">Glass Art</a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li><a href="../portfolio_contact/index.html">お問い合わせ</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="message">
+                <p class="message_pc_p">お問い合わせありがとうございました。<br>
+                    追ってご連絡いたします。</p>
+                <p class="message_sp_p">お問い合わせ<br>ありがとうございました。<br>
+                    追ってご連絡いたします。</p>
+            </div>
+            <div class="submit">
+                <button type="submit">ホームへ戻る</button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer_era">
+                <div class="footer">
+                    <nav class="footer_nav">
+                        <ul class="footer_a">
+                            <li><a href="../index.html#home">ホーム</a></li>
+                            <li><a href="../index.html#concept">コンセプト</a></li>
+                            <li><a href="../index.html#contents">コンテンツ</a></li>
+                            <li><a href="../index.html#about">私について</a></li>
+                            <li class="hnavi_list"><a href="../index.html#works">つくったもの</a></li>
+
+
+                            <li><a href="../index.html#contact">お問い合わせ</a></li>
+                        </ul>
+                    </nav>
+                    <ul class="sns_rnk">
+                        <li class="instagram_icon">
+                            <a href="https://www.instagram.com/akitakemoto.glass/" target="_blank">
+                                <img src="images/Instagram_icon.svg" alt="Instagram">
+                            </a>
+                        </li>
+                        <li class="x_icon">
+                            <a href="https://x.com/5kxm4rq2sj" target="_blank">
+                                <img src="images/X_icon.png" alt="X">
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="copyright">
+                        <p>©️ Aki design All Right Reserved</p>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        $(function () {
+            $('.sp_btn').on('click', function () {
+                $('.sp_btn').toggleClass('open');
+                $('.header_sp_nav').fadeToggle();
+            });
+            $('.header_sp_nav a').on('click', function () {
+                $('.header_sp_nav').fadeOut();
+                $('.sp_btn').removeClass('open');
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
